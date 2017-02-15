@@ -8,7 +8,7 @@
 			<spryng>
 				<actionForNew>authorize_capture</actionForNew>
 				<actionForReturned>authorize_capture</actionForReturned>
-				<askForBillingAddress>1</askForBillingAddress>
+				<requireBillingAddress>1</requireBillingAddress>
 				<currency>EUR</currency>
 				<title>Bank Card</title>
 				<title_backend>spryng</title_backend>
