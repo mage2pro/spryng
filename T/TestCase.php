@@ -1,4 +1,14 @@
 <?php
 // 2017-02-15
 namespace Dfe\Spryng\T;
-abstract class TestCase extends \Df\Core\TestCase {}
+use Dfe\Spryng\Settings as S;
+use SpryngPaymentsApiPhp\Client as API;
+abstract class TestCase extends \Df\Core\TestCase {
+	/**
+	 * 2017-02-15
+	 * @return API
+	 */
+	final protected function api() {return dfc($this, function() {return new API(
+		S::s()->privateKey(), S::s()->test()
+	);});}
+}
