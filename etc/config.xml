@@ -5,19 +5,19 @@
 >
     <default>
 		<df_payment>
-			<iyzico>
+			<spryng>
 				<actionForNew>authorize_capture</actionForNew>
 				<actionForReturned>authorize_capture</actionForReturned>
 				<askForBillingAddress>1</askForBillingAddress>
 				<currency>EUR</currency>
 				<title>Bank Card</title>
 				<title_backend>spryng</title_backend>
-			</iyzico>
+			</spryng>
 		</df_payment>
         <payment>
-            <dfe_iyzico>
+            <dfe_spryng>
 				<model>Dfe\Spryng\Method</model>
-            </dfe_iyzico>
+            </dfe_spryng>
         </payment>
     </default>
 </config>
