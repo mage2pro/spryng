@@ -36,11 +36,18 @@ final class Common extends TestCase {
 
 	/** @test 2017-02-15 */
 	function t04() {
+		/** @var lCard $card */
+		$card = $this->api()->card->create([
+			'card_number' => '4024007108173153'
+			,'cvv' => '123'
+			,'expiry_month' => '12'
+			,'expiry_year' => '18'
+		]);
 		/** @var lCharge $transaction */
 		$charge = $this->api()->transaction->create([
 			'account' => $this->acccountId()
 			,'amount' => '10000'
-			,'card' => ''
+			,'card' => $card->_id
 			,'customer_ip' => '127.0.0.1'
 			,'dynamic_descriptor' => 'Test transaction'
 			,'payment_product' => 'card'
