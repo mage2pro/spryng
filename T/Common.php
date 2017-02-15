@@ -1,0 +1,35 @@
+<?php
+// 2017-02-15
+namespace Dfe\Spryng\T;
+use Dfe\Spryng\Settings as S;
+use SpryngPaymentsApiPhp\Object\Account as lAccount;
+use SpryngPaymentsApiPhp\Object\Card as lCard;
+final class Common extends TestCase {
+	/** 2017-02-15 */
+	function t00() {}
+
+	/** 2017-02-15 */
+	function t01() {
+		echo S::s()->publicKey() . "\n";
+		echo S::s()->privateKey() . "\n";
+	}
+
+	/** 2017-02-15 */
+	function t02() {
+		/** @var lAccount $accounts */
+		$account = df_first($this->api()->account->getAll());
+		echo df_json_encode_pretty($account);
+	}
+
+	/** @test */
+	function t03() {
+		/** @var lCard $card */
+		$card = $this->api()->card->create([
+			'card_number' => '4024007108173153'
+			,'cvv' => '123'
+			,'expiry_month' => '12'
+			,'expiry_year' => '18'
+		]);
+		echo df_json_encode_pretty($card);
+	}
+}

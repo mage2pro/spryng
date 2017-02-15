@@ -66,23 +66,6 @@
 					<depends><field id='enable'>1</field></depends>
 				</field>
 				<field
-					id='testPublicKey'
-					translate='label'
-					type='text'
-					sortOrder='4'
-					showInDefault='1'
-					showInWebsite='1'
-					showInStore='1'
-				>
-					<label>Test Public Key</label>
-					<comment><![CDATA[<ul class='df-note'><li><a href='https://mage2.pro/t/2764' target='_blank'>Where are the API credentials located?</a></li><li><a href='https://mage2.pro/t/2758' target='_blank'>Where is the Sandbox merchant interface located?</a></li></ul>]]></comment>
-					<depends>
-						<field id='enable'>1</field>
-						<field id='test'>1</field>
-					</depends>
-					<validate>required-entry</validate>
-				</field>
-				<field
 					id='testPrivateKey'
 					translate='label'
 					type='obscure'
@@ -91,29 +74,12 @@
 					showInWebsite='1'
 					showInStore='1'
 				>
-					<label>Test Private Key</label>
-					<comment><![CDATA[<ul class='df-note'><li><a href='https://mage2.pro/t/2764' target='_blank'>Where are the API credentials located?</a></li><li><a href='https://mage2.pro/t/2758' target='_blank'>Where is the Sandbox merchant interface located?</a></li></ul>]]></comment>
+					<label>Test API Key</label>
+					<comment><![CDATA[<ul class='df-note'><li><a href='https://mage2.pro/t/2764' target='_blank'>Where is the API Key located?</a></li><li><a href='https://mage2.pro/t/2758' target='_blank'>Where is the Sandbox merchant interface located?</a></li></ul>]]></comment>
 					<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
 					<depends>
 						<field id='enable'>1</field>
 						<field id='test'>1</field>
-					</depends>
-					<validate>required-entry</validate>
-				</field>
-				<field
-					id='livePublicKey'
-					translate='label'
-					type='text'
-					sortOrder='6'
-					showInDefault='1'
-					showInWebsite='1'
-					showInStore='1'
-				>
-					<label>Live Public Key</label>
-					<comment><![CDATA[<a href='https://mage2.pro/t/2764' target='_blank'>How to get it?</a>]]></comment>
-					<depends>
-						<field id='enable'>1</field>
-						<field id='test'>0</field>
 					</depends>
 					<validate>required-entry</validate>
 				</field>
@@ -126,7 +92,7 @@
 					showInWebsite='1'
 					showInStore='1'
 				>
-					<label>Live Private Key</label>
+					<label>Live API Key</label>
 					<comment><![CDATA[<a href='https://mage2.pro/t/2764' target='_blank'>How to get it?</a>]]></comment>
 					<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
 					<depends>
