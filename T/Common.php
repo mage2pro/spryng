@@ -50,6 +50,9 @@ final class Common extends TestCase {
 			,'card' => $card->_id
 			,'customer_ip' => '127.0.0.1'
 			,'dynamic_descriptor' => 'Test transaction'
+			// 2017-02-15
+			// «The payment product being used»
+			// https://www.spryngpayments.com/documentation/credit-cards/
 			,'payment_product' => 'card'
 			,'user_agent' => 'Mage2.PRO'
 		]);
