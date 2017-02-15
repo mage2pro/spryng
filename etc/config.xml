@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<config
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='urn:magento:module:Magento_Store:etc/config.xsd'
+>
+    <default>
+		<df_payment>
+			<iyzico>
+				<actionForNew>authorize_capture</actionForNew>
+				<actionForReturned>authorize_capture</actionForReturned>
+				<askForBillingAddress>1</askForBillingAddress>
+				<currency>EUR</currency>
+				<title>Bank Card</title>
+				<title_backend>spryng</title_backend>
+			</iyzico>
+		</df_payment>
+        <payment>
+            <dfe_iyzico>
+				<model>Dfe\Spryng\Method</model>
+            </dfe_iyzico>
+        </payment>
+    </default>
+</config>
