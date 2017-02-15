@@ -34,11 +34,11 @@ final class Common extends TestCase {
 		echo df_json_encode_pretty($card);
 	}
 
-	/** 2017-02-15 */
+	/** @test 2017-02-15 */
 	function t04() {
 		/** @var lCharge $transaction */
 		$charge = $this->api()->transaction->create([
-			'account' => ''
+			'account' => $this->acccountId()
 			,'amount' => '10000'
 			,'card' => ''
 			,'customer_ip' => '127.0.0.1'
@@ -49,6 +49,6 @@ final class Common extends TestCase {
 		echo df_json_encode_pretty($charge);
 	}
 
-	/** @test 2017-02-15 */
+	/** 2017-02-15 */
 	function t05() {echo df_json_encode_pretty(S::s()->account());}
 }
