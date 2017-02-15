@@ -84,6 +84,23 @@
 					<validate>required-entry</validate>
 				</field>
 				<field
+					id='testAccount'
+					translate='label'
+					type='select'
+					sortOrder='6'
+					showInDefault='1'
+					showInWebsite='1'
+					showInStore='1'
+				>
+					<label>Test Account</label>
+					<source_model>Dfe\Spryng\Source\Account</source_model>
+					<comment><![CDATA[]]></comment>
+					<depends>
+						<field id='enable'>1</field>
+						<field id='test'>1</field>
+					</depends>
+				</field>
+				<field
 					id='livePrivateKey'
 					translate='label'
 					type='obscure'
@@ -101,15 +118,28 @@
 					</depends>
 					<validate>required-entry</validate>
 				</field>
-<!--
-2017-02-05
-[iyzico] Which currencies are supported? https://mage2.pro/t/2628
--->
+				<field
+					id='liveAccount'
+					translate='label'
+					type='select'
+					sortOrder='8'
+					showInDefault='1'
+					showInWebsite='1'
+					showInStore='1'
+				>
+					<label>Live Account</label>
+					<source_model>Dfe\Spryng\Source\Account</source_model>
+					<comment><![CDATA[]]></comment>
+					<depends>
+						<field id='enable'>1</field>
+						<field id='test'>0</field>
+					</depends>
+				</field>
 				<field
 					id='currency'
 					translate='label'
 					type='Df\Directory\FormElement\Currency'
-					sortOrder='8'
+					sortOrder='9'
 					showInDefault='1'
 					showInWebsite='1'
 					showInStore='1'
@@ -122,7 +152,7 @@
 					id='actionForNew'
 					translate='label'
 					type='select'
-					sortOrder='9'
+					sortOrder='10'
 					showInDefault='1'
 					showInWebsite='1'
 					showInStore='1'
@@ -136,7 +166,7 @@
 					id='actionForReturned'
 					translate='label'
 					type='select'
-					sortOrder='10'
+					sortOrder='11'
 					showInDefault='1'
 					showInWebsite='1'
 					showInStore='1'
@@ -149,7 +179,7 @@
 					id='description'
 					translate='label'
 					type='textarea'
-					sortOrder='11'
+					sortOrder='12'
 					showInDefault='1'
 					showInWebsite='1'
 					showInStore='1'
@@ -162,7 +192,7 @@
 					id='askForBillingAddress'
 					translate='label'
 					type='Df\Framework\Form\Element\Checkbox'
-					sortOrder='12'
+					sortOrder='13'
 					showInDefault='1'
 					showInWebsite='1'
 					showInStore='1'
@@ -176,7 +206,7 @@
 					id='min_order_total'
 					translate='label'
 					type='text'
-					sortOrder='13'
+					sortOrder='14'
 					showInDefault='1'
 					showInWebsite='1'
 					showInStore='1'
@@ -190,7 +220,7 @@
 					id='max_order_total'
 					translate='label'
 					type='text'
-					sortOrder='14'
+					sortOrder='15'
 					showInDefault='1'
 					showInWebsite='1'
 					showInStore='1'
@@ -204,7 +234,7 @@
 					id='country_restriction'
 					translate='label'
 					type='select'
-					sortOrder='15'
+					sortOrder='16'
 					showInDefault='1'
 					showInWebsite='1'
 					showInStore='1'
@@ -217,7 +247,7 @@
 					id='countries'
 					translate='label'
 					type='Df\Framework\Form\Element\Multiselect'
-					sortOrder='16'
+					sortOrder='17'
 					showInDefault='1'
 					showInWebsite='1'
 					showInStore='1'

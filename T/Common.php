@@ -4,6 +4,7 @@ namespace Dfe\Spryng\T;
 use Dfe\Spryng\Settings as S;
 use SpryngPaymentsApiPhp\Object\Account as lAccount;
 use SpryngPaymentsApiPhp\Object\Card as lCard;
+use SpryngPaymentsApiPhp\Object\Transaction as lCharge;
 final class Common extends TestCase {
 	/** 2017-02-15 */
 	function t00() {}
@@ -14,14 +15,14 @@ final class Common extends TestCase {
 		echo S::s()->privateKey() . "\n";
 	}
 
-	/** 2017-02-15 */
+	/** @test 2017-02-15 */
 	function t02() {
 		/** @var lAccount $accounts */
 		$account = df_first($this->api()->account->getAll());
 		echo df_json_encode_pretty($account);
 	}
 
-	/** @test */
+	/** 2017-02-15 */
 	function t03() {
 		/** @var lCard $card */
 		$card = $this->api()->card->create([
@@ -31,5 +32,20 @@ final class Common extends TestCase {
 			,'expiry_year' => '18'
 		]);
 		echo df_json_encode_pretty($card);
+	}
+
+	/** 2017-02-15 */
+	function t04() {
+		/** @var lCharge $transaction */
+		$charge = $this->api()->transaction->create([
+			'account' => ''
+			,'amount' => '10000'
+			,'card' => ''
+			,'customer_ip' => '127.0.0.1'
+			,'dynamic_descriptor' => 'Test transaction'
+			,'payment_product' => 'card'
+			,'user_agent' => 'Mage2.PRO'
+		]);
+		echo df_json_encode_pretty($charge);
 	}
 }

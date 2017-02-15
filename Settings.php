@@ -1,5 +1,15 @@
 <?php
 // 2017-02-15
 namespace Dfe\Spryng;
+use SpryngPaymentsApiPhp\Client as API;
 /** @method static Settings s() */
-final class Settings extends \Df\StripeClone\Settings {}
+final class Settings extends \Df\StripeClone\Settings {
+	/**
+	 * 2017-02-15
+	 * @param bool|null $test [optional]
+	 * @return API
+	 */
+	public function api($test = null) {return dfc($this, function($test) {return new API(
+		$this->p(($test ? 'test' : 'live') . 'PrivateKey'), $test
+	);}, [!is_null($test) ? $test : $this->test()]);}
+}

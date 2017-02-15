@@ -8,7 +8,5 @@ abstract class TestCase extends \Df\Core\TestCase {
 	 * 2017-02-15
 	 * @return API
 	 */
-	final protected function api() {return dfc($this, function() {return new API(
-		S::s()->privateKey(), S::s()->test()
-	);});}
+	final protected function api() {return S::s()->api();}
 }
