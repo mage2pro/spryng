@@ -15,7 +15,7 @@ final class Common extends TestCase {
 		echo S::s()->privateKey() . "\n";
 	}
 
-	/** @test 2017-02-15 */
+	/** 2017-02-15 */
 	function t02() {
 		/** @var lAccount $accounts */
 		$account = df_first($this->api()->account->getAll());
@@ -48,4 +48,7 @@ final class Common extends TestCase {
 		]);
 		echo df_json_encode_pretty($charge);
 	}
+
+	/** @test 2017-02-15 */
+	function t05() {echo df_json_encode_pretty(S::s()->account());}
 }
