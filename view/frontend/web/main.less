@@ -8,6 +8,13 @@ form.dfe_spryng {
 	fieldset#_fieldset {
 		border: 0;
 		#_card_container {> #_card_container_row2, #_submit_button {margin-top: 1rem;}}
+		// 2017-02-16
+		// Стандартная для Spryng кнопка отправки формы страшна,
+		// да и у нас уже есть стандартная для Magento,
+		// поэтому скрываю эту, а форму попробую отправлять посредством недокументированного метода.
+		// jsclient.submitCardForm
+		// How to submit the Spryng bank card form programmatically? https://mage2.pro/t/2799
+		#_submit_button {display: none;}
 		input {
 			&#_card_number {width: 225px;}
 			&#_cvv {margin-left: 1rem; width: 55px;}
