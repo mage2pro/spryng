@@ -57,6 +57,9 @@ final class Common extends TestCase {
 			,'user_agent' => 'Mage2.PRO'
 		]);
 		echo df_json_encode_pretty($charge);
+		// 2017-02-16
+		// [Spryng] An example of the «createTransaction» API method response
+		// https://mage2.pro/t/2800
 	}
 
 	/** 2017-02-15 */
