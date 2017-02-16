@@ -7,6 +7,18 @@ define([
 	defaults: {df: {card: {newTemplate: 'Dfe_Spryng/card/new'}}},
 	/**
 	 * 2017-02-16
+	 * @override
+	 * @see mage2pro/core/Payment/view/frontend/web/mixin.js
+	 * @used-by mage2pro/core/Payment/view/frontend/web/template/item.html
+	 * @param {HTMLElement} element
+	 * @param {Object} _this
+	 */
+	dfFormAfterRender: function(element, _this) {
+		this._super(element, _this);
+		this.initDf();
+	},
+	/**
+	 * 2017-02-16
 	 * Does Spryng support any other bank cards besides Visa and MasterCard?
 	 * https://mage2.pro/t/2796
 	 * @returns {String[]}
@@ -18,7 +30,6 @@ define([
 	*/
 	initialize: function() {
 		this._super();
-		this.initDf();
 		return this;
 	},
 	/**
