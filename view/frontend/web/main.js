@@ -2,6 +2,9 @@
 define([
 	'df', 'Df_Payment/stripeClone', 'jquery'
 ], function(df, parent, $) {'use strict'; return parent.extend({
+	// 2017-02-16
+	// @used-by mage2pro/core/Payment/view/frontend/web/template/card.html
+	defaults: {df: {card: {newTemplate: 'Dfe_Spryng/card/new'}}},
 	/**
 	 * 2017-02-16
 	 * Does Spryng support any other bank cards besides Visa and MasterCard?
@@ -33,7 +36,9 @@ define([
 		// https://www.google.com/search?q=%22jsclient.js%22+site%3Aspryngpayments.com
 		var lib = 'https://' + (this.isTest() ? 'sandbox' : 'api') + '.spryngpayments.com/cdn/jsclient.js';
 		require.undef(lib);
-		require([lib], function() {});
+		require([lib], function() {
+			jsclient.injectForm(_this.dfForm().get(0));
+		});
 		return deferred.promise();
 	}),
 	/**
