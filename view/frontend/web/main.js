@@ -1,7 +1,7 @@
 // 2017-02-16
 define([
-	'df', 'Df_StripeClone/main'
-], function(df, parent) {'use strict'; return parent.extend({
+	'df', 'Df_StripeClone/main', 'jquery'
+], function(df, parent, $) {'use strict'; return parent.extend({
 	/**
 	 * 2017-02-16
 	 * Does Spryng support any other bank cards besides Visa and MasterCard?
@@ -18,10 +18,14 @@ define([
 	 * @param {Object|Number} status
 	 * @returns {Boolean}
 	 */
-	tokenCheckStatus: function(status) {return null;},
+	tokenCheckStatus: function(status) {
+		debugger;
+		return null;
+	},
 
     /**
 	 * 2017-02-16
+	 * How to submit the Spryng bank card form programmatically? https://mage2.pro/t/2799
 	 * @override
 	 * @see ...
 	 * @used-by placeOrder()
@@ -29,7 +33,23 @@ define([
 	 * @param {Function} callback
 	 * @returns {Function}
 	 */
-	tokenCreate: function(params, callback) {return null;},
+	tokenCreate: function(params, callback) {
+		$.ajax(this.url('card'), {
+			contentType: 'application/json; charset=utf-8'
+			,data: JSON.stringify(params)
+			,dataType: 'json'
+			,failure: function(message) {
+				debugger;
+				callback(false, message);
+			}
+			,method: 'POST'
+			,success: function(data) {
+				debugger;
+				callback(true, data);
+			}
+		});
+		return null;
+	},
 
     /**
 	 * 2017-02-16
@@ -40,7 +60,10 @@ define([
 	 * @param {Object} resp
 	 * @returns {String}
 	 */
-	tokenErrorMessage: function(status, resp) {return null;},
+	tokenErrorMessage: function(status, resp) {
+		debugger;
+		return null;
+	},
 
     /**
 	 * 2017-02-16
@@ -50,16 +73,25 @@ define([
 	 * @param {Object} resp
 	 * @returns {String}
 	 */
-	tokenFromResponse: function(resp) {return null;},
+	tokenFromResponse: function(resp) {
+		debugger;
+		return null;
+	},
 
     /**
 	 * 2017-02-16
+	 * How to submit the Spryng bank card form programmatically? https://mage2.pro/t/2799
 	 * @override
 	 * @see ...
 	 * @used-by placeOrder()
 	 * @returns {Object}
 	 */
-	tokenParams: function() {return null;},
+	tokenParams: function() {return {
+		cvv: this.creditCardVerificationNumber()
+		,expiry_month: this.creditCardExpMonth()
+		,expiry_year: this.creditCardExpYear()
+		,card_number: this.creditCardNumber()
+	};},
 
   	/**
 	 * 2017-02-16
