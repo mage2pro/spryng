@@ -15,13 +15,10 @@ define([
 	 * @override
 	 * @see ...
 	 * @used-by placeOrder()
-	 * @param {Object|Number} status
+	 * @param {Boolean} status
 	 * @returns {Boolean}
 	 */
-	tokenCheckStatus: function(status) {
-		debugger;
-		return null;
-	},
+	tokenCheckStatus: function(status) {return status;},
 
     /**
 	 * 2017-02-16
@@ -35,18 +32,24 @@ define([
 	 */
 	tokenCreate: function(params, callback) {
 		$.ajax(this.url('card'), {
-			contentType: 'application/json; charset=utf-8'
+			complete: function(ajax, status) {
+				if ('error' === status) {
+					/** @type {Object} */
+					var resp = JSON.parse(ajax.responseText);
+					callback(false, df.s.ucFirst(resp.message) + ":<br/>" +
+						 $.map(resp.details, function(v, k) {return df.s.t(
+						 	'<b>{0}</b>: {1}.', k, v
+						 );}).join("<br/>")
+					);
+				}
+			}
+			,contentType: 'application/json; charset=utf-8'
 			,data: JSON.stringify(params)
 			,dataType: 'json'
-			,failure: function(message) {
-				debugger;
-				callback(false, message);
-			}
 			,method: 'POST'
-			,success: function(data) {
-				debugger;
-				callback(true, data);
-			}
+			// 2017-02-16
+			// Токен имеет вид: «58a5b584b7f62b51618718fd».
+			,success: function(data) {callback(true, data._id);}
 		});
 		return null;
 	},
@@ -57,26 +60,20 @@ define([
 	 * @see ...
 	 * @used-by placeOrder()
 	 * @param {Object|Number} status
-	 * @param {Object} resp
+	 * @param {String} resp
 	 * @returns {String}
 	 */
-	tokenErrorMessage: function(status, resp) {
-		debugger;
-		return null;
-	},
+	tokenErrorMessage: function(status, resp) {return resp;},
 
     /**
 	 * 2017-02-16
 	 * @override
 	 * @see ...
 	 * @used-by placeOrder()
-	 * @param {Object} resp
+	 * @param {String} resp
 	 * @returns {String}
 	 */
-	tokenFromResponse: function(resp) {
-		debugger;
-		return null;
-	},
+	tokenFromResponse: function(resp) {return resp;},
 
     /**
 	 * 2017-02-16
@@ -89,7 +86,7 @@ define([
 	tokenParams: function() {return {
 		cvv: this.creditCardVerificationNumber()
 		,expiry_month: this.creditCardExpMonth()
-		,expiry_year: this.creditCardExpYear()
+		,expiry_year: this.creditCardExpYear2()
 		,card_number: this.creditCardNumber()
 	};},
 
@@ -101,6 +98,6 @@ define([
 	 * @returns {String}
 	 */
 	url: function(suffix) { return(
-		'https://' + (this.isTest() ? 'sandbox' : 'api') + '.spryngpayments.com/' + suffix
+		'https://' + (this.isTest() ? 'sandbox' : 'api') + '.spryngpayments.com/v1/' + suffix
 	);}
 });});
