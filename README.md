@@ -1,5 +1,7 @@
 The extension integrates your Magento 2 store with the **[Spryng](https://www.spryngpayments.com)** payment service (Netherlands).
 
+![](https://mage2.pro/uploads/default/original/2X/6/68f251cf13e37438f6da619d173a0c0dcdb7e1ff.png)
+
 ## Licensing
 It is a paid extension, not free.  
 You can use it for free for the testing puproses only.  
