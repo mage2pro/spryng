@@ -11,7 +11,7 @@
 				<requireBillingAddress>1</requireBillingAddress>
 				<currency>EUR</currency>
 				<title>Bank Card</title>
-				<title_backend>spryng</title_backend>
+				<title_backend>Spryng</title_backend>
 			</spryng>
 		</df_payment>
         <payment>
