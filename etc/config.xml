@@ -10,6 +10,7 @@
 				<actionForReturned>authorize_capture</actionForReturned>
 				<requireBillingAddress>1</requireBillingAddress>
 				<currency>EUR</currency>
+				<prefill>4024007108173153</prefill>
 				<title>Bank Card</title>
 				<title_backend>Spryng</title_backend>
 			</spryng>
