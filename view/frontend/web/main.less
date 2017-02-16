@@ -1,10 +1,16 @@
 // 2017-02-16
+// 2017-02-16
+// К сожалению, реальная форма формируется динамически,
+// и нет возможности поместить её внутрь этого контейнера.
+// Скрываем этот контейнер, чтобы он не создавал пустых белых полос над реальной формой.
+#dfe_spryng_form_cc {display: none;}
 form.dfe_spryng {
 	fieldset#_fieldset {
 		border: 0;
+		#_card_container {> #_card_container_row2, #_submit_button {margin-top: 1rem;}}
 		input {
 			&#_card_number {width: 225px;}
-			&#_cvv {width: 55px;}
+			&#_cvv {margin-left: 1rem; width: 55px;}
 			&#_expiry  {width: 77px;}
 		}
 	}
