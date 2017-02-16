@@ -1,7 +1,7 @@
 // 2017-02-16
 define([
-	'Df_Payment/card'
-], function(parent) {'use strict'; return parent.extend({
+	'df', 'Df_Payment/stripeClone', 'jquery'
+], function(df, parent, $) {'use strict'; return parent.extend({
 	/**
 	 * 2017-02-16
 	 * Does Spryng support any other bank cards besides Visa and MasterCard?
@@ -15,8 +15,27 @@ define([
 	*/
 	initialize: function() {
 		this._super();
+		this.initDf();
 		return this;
 	},
+	/**
+	 * 2017-02-16
+	 * @used-by initialize()
+	 * @used-by placeOrder()
+	 * @returns {Promise}
+	*/
+	initDf: df.c(function() {
+		/** @type {Deferred} */
+		var deferred = $.Deferred();
+		var _this = this;
+		/** @type {String} */
+		// 2017-02-16
+		// https://www.google.com/search?q=%22jsclient.js%22+site%3Aspryngpayments.com
+		var lib = 'https://' + (this.isTest() ? 'sandbox' : 'api') + '.spryngpayments.com/cdn/jsclient.js';
+		require.undef(lib);
+		require([lib], function() {});
+		return deferred.promise();
+	}),
 	/**
 	 * 2017-02-16
 	 * @override
@@ -25,6 +44,9 @@ define([
 	 * @param {this} _this
 	*/
 	placeOrder: function(_this) {
-		if (this.validate()) {}
+		if (this.validate()) {
+			this.initDf().done(function() {
+			});
+		}
 	}
 });});
