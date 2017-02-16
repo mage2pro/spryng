@@ -19,8 +19,6 @@ define([
 	*/
 	placeOrder: function(_this) {
 		if (this.validate()) {
-			this.initDf().done(function() {
-			});
 		}
 	},
 
