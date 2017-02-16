@@ -34,13 +34,22 @@ define([
 		/** @type {String} */
 		// 2017-02-16
 		// https://www.google.com/search?q=%22jsclient.js%22+site%3Aspryngpayments.com
-		var lib = 'https://' + (this.isTest() ? 'sandbox' : 'api') + '.spryngpayments.com/cdn/jsclient.js';
+		var lib = this.url('cdn/jsclient.js');
 		require.undef(lib);
 		require([lib], function() {jsclient.injectForm(_this.dfForm().get(0), {
-			'submit_title': $t('Place Order')
+			card_number_placeholder: $t('Credit Card Number')
+			// 2017-02-16
+			// https://github.com/spryngpayments/prestashop/blob/15819af0/views/templates/hook/payment.tpl#L56-L60
+			,cardstore_url: _this.url('v1/card/')
+			,cvv_placeholder3: $t('')
+			,cvv_placeholder4: $t('')
+			,expiry_placeholder: $t('')
+			,payment_products: 	['card']
+			,'submit_title': $t('Place Order')
 		});});
 		return deferred.promise();
 	}),
+
 	/**
 	 * 2017-02-16
 	 * @override
@@ -53,5 +62,16 @@ define([
 			this.initDf().done(function() {
 			});
 		}
-	}
+	},
+
+  	/**
+	 * 2017-02-16
+	 * @private
+	 * @used-by initDf()
+	 * @param {String} suffix
+	 * @returns {String}
+	 */
+	url: function(suffix) { return(
+		'https://' + (this.isTest() ? 'sandbox' : 'api') + '.spryngpayments.com/' + suffix
+	);}
 });});
