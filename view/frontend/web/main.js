@@ -1,7 +1,7 @@
 // 2017-02-16
 define([
-	'df', 'Df_Payment/stripeClone', 'jquery'
-], function(df, parent, $) {'use strict'; return parent.extend({
+	'df', 'Df_Payment/stripeClone', 'jquery', 'mage/translate'
+], function(df, parent, $, $t) {'use strict'; return parent.extend({
 	// 2017-02-16
 	// @used-by mage2pro/core/Payment/view/frontend/web/template/card.html
 	defaults: {df: {card: {newTemplate: 'Dfe_Spryng/card/new'}}},
@@ -36,9 +36,9 @@ define([
 		// https://www.google.com/search?q=%22jsclient.js%22+site%3Aspryngpayments.com
 		var lib = 'https://' + (this.isTest() ? 'sandbox' : 'api') + '.spryngpayments.com/cdn/jsclient.js';
 		require.undef(lib);
-		require([lib], function() {
-			jsclient.injectForm(_this.dfForm().get(0));
-		});
+		require([lib], function() {jsclient.injectForm(_this.dfForm().get(0), {
+			'submit_title': $t('Place Order')
+		});});
 		return deferred.promise();
 	}),
 	/**
