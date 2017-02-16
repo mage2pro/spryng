@@ -41,9 +41,10 @@ define([
 			// 2017-02-16
 			// https://github.com/spryngpayments/prestashop/blob/15819af0/views/templates/hook/payment.tpl#L56-L60
 			,cardstore_url: _this.url('v1/card/')
-			,cvv_placeholder3: $t('')
-			,cvv_placeholder4: $t('')
-			,expiry_placeholder: $t('')
+			,cvv_placeholder3: $t('Card Verification Number')
+			,cvv_placeholder4: $t('Card Verification Number')
+			,expiry_placeholder: $t('ММ/YY')
+			,no_style: true
 			,payment_products: 	['card']
 			,'submit_title': $t('Place Order')
 		});});
