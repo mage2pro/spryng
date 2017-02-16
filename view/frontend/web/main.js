@@ -10,7 +10,7 @@ define([
 	 */
 	getCardTypes: function() {return ['VI', 'MC', 'AE', 'JCB', 'DI', 'DN'];},
 
-    /**
+	/**
 	 * 2017-02-16
 	 * @override
 	 * @see ...
@@ -20,7 +20,7 @@ define([
 	 */
 	tokenCheckStatus: function(status) {return status;},
 
-    /**
+	/**
 	 * 2017-02-16
 	 * How to submit the Spryng bank card form programmatically? https://mage2.pro/t/2799
 	 * @override
@@ -38,7 +38,7 @@ define([
 					var resp = JSON.parse(ajax.responseText);
 					callback(false, df.s.ucFirst(resp.message) + ":<br/>" +
 						 $.map(resp.details, function(v, k) {return df.s.t(
-						 	'<b>{0}</b>: {1}.', k, v
+							'<b>{0}</b>: {1}.', k, v
 						 );}).join("<br/>")
 					);
 				}
@@ -54,7 +54,7 @@ define([
 		return null;
 	},
 
-    /**
+	/**
 	 * 2017-02-16
 	 * @override
 	 * @see ...
@@ -65,7 +65,7 @@ define([
 	 */
 	tokenErrorMessage: function(status, resp) {return resp;},
 
-    /**
+	/**
 	 * 2017-02-16
 	 * @override
 	 * @see ...
@@ -75,7 +75,7 @@ define([
 	 */
 	tokenFromResponse: function(resp) {return resp;},
 
-    /**
+	/**
 	 * 2017-02-16
 	 * How to submit the Spryng bank card form programmatically? https://mage2.pro/t/2799
 	 * @override
@@ -90,7 +90,7 @@ define([
 		,card_number: this.creditCardNumber()
 	};},
 
-  	/**
+	/**
 	 * 2017-02-16
 	 * @private
 	 * @used-by initDf()
