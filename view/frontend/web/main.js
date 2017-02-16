@@ -26,14 +26,6 @@ define([
 	getCardTypes: function() {return ['VI', 'MC'];},
 	/**
 	 * 2017-02-16
-	 * @returns {Object}
-	*/
-	initialize: function() {
-		this._super();
-		return this;
-	},
-	/**
-	 * 2017-02-16
 	 * @used-by initialize()
 	 * @used-by placeOrder()
 	 * @returns {Promise}
