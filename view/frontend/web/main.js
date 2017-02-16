@@ -1,6 +1,6 @@
 // 2017-02-16
 define([
-	'df', 'Df_Payment/stripeClone'
+	'df', 'Df_StripeClone/main'
 ], function(df, parent) {'use strict'; return parent.extend({
 	/**
 	 * 2017-02-16
