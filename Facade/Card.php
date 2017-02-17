@@ -2,6 +2,7 @@
 namespace Dfe\Spryng\Facade;
 use SpryngPaymentsApiPhp\Object\Card as C;
 // 2017-02-17
+// https://api.spryngpayments.com/v1/#operation/getCard
 final class Card implements \Df\StripeClone\Facade\ICard {
 	/**
 	 * 2017-02-17
@@ -18,14 +19,14 @@ final class Card implements \Df\StripeClone\Facade\ICard {
 	 * @used-by \Df\StripeClone\CardFormatter::label()
 	 * @return string
 	 */
-	function brand() {return null;}
+	function brand() {return $this->_p['brand'];}
 
 	/**
 	 * 2017-02-17
 	 * @override
 	 * @see \Df\StripeClone\Facade\ICard::country()
 	 * @used-by \Df\StripeClone\CardFormatter::country()
-	 * @return string
+	 * @return null
 	 */
 	function country() {return null;}
 
@@ -37,7 +38,7 @@ final class Card implements \Df\StripeClone\Facade\ICard {
 	 * @used-by \Df\StripeClone\CardFormatter::ii()
 	 * @return string
 	 */
-	function expMonth() {return null;}
+	function expMonth() {return $this->_p['expiry_month'];}
 
 	/**
 	 * 2017-02-17
@@ -47,7 +48,7 @@ final class Card implements \Df\StripeClone\Facade\ICard {
 	 * @used-by \Df\StripeClone\CardFormatter::ii()
 	 * @return string
 	 */
-	function expYear() {return null;}
+	function expYear() {return "20{$this->_p['expiry_year']}";}
 
 	/**
 	 * 2017-02-17
@@ -57,7 +58,7 @@ final class Card implements \Df\StripeClone\Facade\ICard {
 	 * @used-by \Df\StripeClone\Facade\Customer::cardIdForJustCreated()
 	 * @return string
 	 */
-	function id() {return null;}
+	function id() {return $this->_p['_id'];}
 
 	/**
 	 * 2017-02-17
@@ -67,7 +68,7 @@ final class Card implements \Df\StripeClone\Facade\ICard {
 	 * @used-by \Df\StripeClone\CardFormatter::label()
 	 * @return string
 	 */
-	function last4() {return null;}
+	function last4() {return $this->_p['last_four'];}
 
 	/**
 	 * 2017-02-17
@@ -76,7 +77,7 @@ final class Card implements \Df\StripeClone\Facade\ICard {
 	 * @used-by \Df\StripeClone\CardFormatter::ii()
 	 * @return string
 	 */
-	function owner() {return null;}
+	function owner() {return $this->_p['cardholder_name'];}
 
 	/**
 	 * 2017-02-17
