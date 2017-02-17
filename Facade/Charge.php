@@ -41,12 +41,14 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	 * 2017-02-17
 	 * Returns the path to the bank card information
 	 * in a charge converted to an array by @see \Dfe\Stripe\Facade\O::toArray()
+	 * [Spryng] An example of the «createTransaction» API method response
+	 * (while using the Spryng PHP SDK): https://mage2.pro/t/2800
 	 * @override
 	 * @see \Df\StripeClone\Facade\Charge::pathToCard()
 	 * @used-by \Df\StripeClone\Block\Info::prepare()
 	 * @return string
 	 */
-	function pathToCard() {return null;}
+	function pathToCard() {return 'card';}
 
 	/**
 	 * 2017-02-17
