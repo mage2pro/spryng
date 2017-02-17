@@ -2,8 +2,17 @@
 // 2017-02-15
 namespace Dfe\Spryng;
 use Magento\Sales\Model\Order\Payment\Transaction as T;
+use SpryngPaymentsApiPhp\Client as API;
 /** @method Settings s() */
 final class Method extends \Df\StripeClone\Method {
+	/**
+	 * 2017-02-17
+	 * @used-by \Dfe\Spryng\Facade\Charge::api()
+	 * @used-by \Dfe\Spryng\Facade\Customer::api()
+	 * @return API
+	 */
+	final function api() {return $this->s()->api();}
+
 	/**
 	 * 2017-02-15
 	 * @override

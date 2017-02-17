@@ -2,8 +2,10 @@
 namespace Dfe\Spryng\Facade;
 use Magento\Sales\Model\Order\Creditmemo as CM;
 use Magento\Sales\Model\Order\Payment as OP;
+use SpryngPaymentsApiPhp\Client as API;
 use SpryngPaymentsApiPhp\Object\Transaction as C;
 // 2017-02-17
+/** @method \Dfe\Spryng\Method m() */
 final class Charge extends \Df\StripeClone\Facade\Charge {
 	/**
 	 * 2017-02-17
@@ -73,6 +75,8 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	/**
 	 * 2017-02-17
 	 * Информация о банковской карте.
+	 * Why does a «createTransaction» API method response
+	 * not contain the bank card information? https://mage2.pro/t/2812
 	 * @override
 	 * @see \Df\StripeClone\Facade\Charge::cardData()
 	 * @used-by \Df\StripeClone\Facade\Charge::card()
@@ -80,5 +84,11 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	 * @return \SpryngPaymentsApiPhp\Object\Card
 	 * @see \Dfe\Stripe\Facade\Customer::cardsData()
 	 */
-	protected function cardData($c) {return null;}
+	protected function cardData($c) {return $this->api()->card->getById($c->card->_id);}
+
+	/**
+	 * 2017-02-17
+	 * @return API
+	 */
+	private function api() {return $this->m()->api();}
 }

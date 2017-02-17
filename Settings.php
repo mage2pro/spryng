@@ -15,6 +15,8 @@ final class Settings extends \Df\StripeClone\Settings {
 
 	/**
 	 * 2017-02-15
+	 * @used-by account()
+	 * @used-by \Dfe\Spryng\Method::api()
 	 * @param bool|null $test [optional]
 	 * @return API
 	 */
