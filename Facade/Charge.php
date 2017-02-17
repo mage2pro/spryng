@@ -35,7 +35,7 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	 * @param C $c
 	 * @return string
 	 */
-	function id($c) {return null;}
+	function id($c) {return $c->_id;}
 
 	/**
 	 * 2017-02-17
