@@ -3,6 +3,7 @@ namespace Dfe\Spryng\Facade;
 use SpryngPaymentsApiPhp\Object\Card as C;
 // 2017-02-17
 // https://api.spryngpayments.com/v1/#operation/getCard
+// A real API response does not contain all the documented fields: https://mage2.pro/t/2819
 final class Card implements \Df\StripeClone\Facade\ICard {
 	/**
 	 * 2017-02-17
@@ -23,12 +24,14 @@ final class Card implements \Df\StripeClone\Facade\ICard {
 
 	/**
 	 * 2017-02-17
+	 * [Spryng] Why does a «getCard» API method response not contain the «issuer_country» property?
+	 * https://mage2.pro/t/2819
 	 * @override
 	 * @see \Df\StripeClone\Facade\ICard::country()
 	 * @used-by \Df\StripeClone\CardFormatter::country()
 	 * @return null
 	 */
-	function country() {return null;}
+	function country() {return $this->_p['issuer_country'];}
 
 	/**
 	 * 2017-02-17
@@ -72,6 +75,7 @@ final class Card implements \Df\StripeClone\Facade\ICard {
 
 	/**
 	 * 2017-02-17
+	 * [Spryng] Is any possibility to collect the cardholder's name? https://mage2.pro/t/2802
 	 * @override
 	 * @see \Df\StripeClone\Facade\ICard::owner()
 	 * @used-by \Df\StripeClone\CardFormatter::ii()
