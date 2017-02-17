@@ -8,7 +8,7 @@ final class Card implements \Df\StripeClone\Facade\ICard {
 	 * @used-by \Df\StripeClone\Facade\Card::create()
 	 * @param C|array(string => string) $p
 	 */
-	function __construct($p) {}
+	function __construct($p) {$this->_p = is_array($p) ? $p : get_object_vars($p);}
 
 	/**
 	 * 2017-02-17

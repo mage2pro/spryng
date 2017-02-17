@@ -56,6 +56,8 @@ final class Common extends TestCase {
 			,'payment_product' => 'card'
 			,'user_agent' => 'Mage2.PRO'
 		]);
+		/** @var lCard $oCard */
+		$oCard = $this->api()->card->getById($charge->card->_id);
 		echo df_json_encode_pretty($charge);
 		// 2017-02-16
 		// [Spryng] An example of the «createTransaction» API method response
