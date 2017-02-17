@@ -97,7 +97,7 @@ define([
 	 * @param {String} suffix
 	 * @returns {String}
 	 */
-	url: function(suffix) { return(
-		'https://' + (this.isTest() ? 'sandbox' : 'api') + '.spryngpayments.com/v1/' + suffix
+	url: function(suffix) {return df.s.t('https://{0}.spryngpayments.com/v1/{1}',
+		this.isTest() ? 'sandbox' : 'api', suffix
 	);}
 });});
