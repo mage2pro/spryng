@@ -54,6 +54,7 @@ final class Charge extends \Df\StripeClone\Charge {
 	 * для будущего повторного использования.
 	 * @override
 	 * @see \Df\StripeClone\Charge::k_CardId()
+	 * @used-by kc_Excluded()
 	 * @used-by \Df\StripeClone\Charge::request()
 	 * @used-by \Df\StripeClone\Charge::newCard()
 	 * @return string
@@ -95,5 +96,5 @@ final class Charge extends \Df\StripeClone\Charge {
 	 * @used-by \Df\StripeClone\Charge::newCard()
 	 * @return string[]
 	 */
-	protected function kc_Excluded() {return [parent::KC_DESCRIPTION];}
+	protected function kc_Excluded() {return [parent::KC_DESCRIPTION, $this->k_CardId()];}
 }
