@@ -14,7 +14,7 @@ final class Customer extends \Df\StripeClone\Facade\Customer {
 	 * @param string $token
 	 * @return string
 	 */
-	function cardAdd($c, $token) {return null;}
+	function cardAdd($c, $token) {return $token;}
 
 	/**
 	 * 2017-02-17
@@ -56,7 +56,7 @@ final class Customer extends \Df\StripeClone\Facade\Customer {
 	 * @return \SpryngPaymentsApiPhp\Object\Card[]
 	 * @see \Dfe\Stripe\Facade\Charge::cardData()
 	 */
-	protected function cardsData($c) {return null;}
+	protected function cardsData($c) {return [];}
 
 	/**
 	 * 2017-02-17

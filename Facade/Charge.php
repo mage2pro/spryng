@@ -25,7 +25,7 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	 * @param array(string => mixed) $p
 	 * @return C
 	 */
-	function create(array $p) {return null;}
+	function create(array $p) {return $this->api()->transaction->create($p);}
 
 	/**
 	 * 2017-02-17
