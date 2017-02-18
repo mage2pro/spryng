@@ -31,6 +31,7 @@ final class Charge extends \Df\StripeClone\Charge {
 		// [Spryng][API] It looks like the description of the «merchant_reference»
 		// transaction's parameter is incorrect: https://mage2.pro/t/2842
 		,'merchant_reference' => $this->oii()
+		,'user_agent' => df_request_ua()
 	];}
 
 	/**
