@@ -1,6 +1,7 @@
 <?php
 namespace Dfe\Spryng;
 // 2017-02-18
+// https://api.spryngpayments.com/v1/#operation/createTransaction
 /** @method Settings ss() */
 final class Charge extends \Df\StripeClone\Charge {
 	/**
@@ -15,13 +16,22 @@ final class Charge extends \Df\StripeClone\Charge {
 	 * @return string
 	 */
 	protected function cardIdPrefix() {return null;}
-	
+
+	/**
+	 * 2017-02-18
+	 * Здесь у order ещё нет id, но уже есть incrementId (потому что зарезервирован).
+	 * @override
+	 * @see \Df\StripeClone\Charge::pCharge()
+	 * @used-by \Df\StripeClone\Charge::request()
+	 * @return array(string => mixed)
+	 */
+	protected function pCharge() {return [];}
+
 	/**
 	 * 2017-02-18
 	 * Ключ, значением которого является токен банковской карты.
 	 * Этот ключ передаётся как параметр ДВУХ РАЗНЫХ запросов к API ПС:
 	 * 1) в запросе на проведение транзакции (charge)
-	 * https://api.spryngpayments.com/v1/#operation/createTransaction
 	 * 2) в запросе на сохранение банковской карты для будущего повторного использования
 	 * Spryng пока не поддерживает (или не документировал) сохранение банковской карты
 	 * для будущего повторного использования.
