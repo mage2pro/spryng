@@ -45,15 +45,6 @@ final class Charge extends \Df\StripeClone\Charge {
 
 	/**
 	 * 2017-02-18
-	 * @override
-	 * @see \Df\StripeClone\Charge::keyCurrency()
-	 * @used-by \Df\StripeClone\Charge::request()
-	 * @return string|null
-	 */
-	protected function keyCurrency() {return null;}
-
-	/**
-	 * 2017-02-18
 	 * Ключ, значением которого является токен банковской карты.
 	 * Этот ключ передаётся как параметр ДВУХ РАЗНЫХ запросов к API ПС:
 	 * 1) в запросе на проведение транзакции (charge)
@@ -70,15 +61,6 @@ final class Charge extends \Df\StripeClone\Charge {
 
 	/**
 	 * 2017-02-18
-	 * @override
-	 * @see \Df\StripeClone\Charge::keyDescription()
-	 * @used-by \Df\StripeClone\Charge::request()
-	 * @return string
-	 */
-	protected function keyDescription() {return null;}
-
-	/**
-	 * 2017-02-18
 	 * https://api.spryngpayments.com/v1/#operation/createTransaction
 	 * @override
 	 * @see \Df\StripeClone\Charge::keyDSD()
@@ -86,4 +68,13 @@ final class Charge extends \Df\StripeClone\Charge {
 	 * @return string
 	 */
 	protected function keyDSD() {return 'dynamic_descriptor';}
+
+	/**
+	 * 2017-02-18
+	 * @override
+	 * @see \Df\StripeClone\Charge::keysExcluded()
+	 * @used-by \Df\StripeClone\Charge::request()
+	 * @return string[]
+	 */
+	protected function keysExcluded() {return [parent::K_CURRENCY, parent::K_DESCRIPTION];}
 }
