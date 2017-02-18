@@ -1,5 +1,6 @@
 <?php
 namespace Dfe\Spryng;
+use Magento\Sales\Model\Order\Address;
 // 2017-02-18
 // https://api.spryngpayments.com/v1/#operation/createTransaction
 /** @method Settings ss() */
@@ -33,6 +34,40 @@ final class Charge extends \Df\StripeClone\Charge {
 		// transaction's parameter is incorrect: https://mage2.pro/t/2842
 		,'merchant_reference' => $this->oii()
 		,'user_agent' => df_request_ua()
+	];}
+
+	/**
+	 * 2017-02-18
+	 * @override
+	 * @see \Df\StripeClone\Charge::pCustomer()
+	 * @used-by \Df\StripeClone\Charge::newCard()
+	 * @return array(string => mixed)
+	 */
+	protected function pCustomer() {/** @var Address|null $sa */ $sa = $this->addressSB(); return [
+		'city' => $sa->getCity()
+		,'country_code' => $sa->getCountryId()
+		,'date_of_birth' => $this->customerDobS()
+		,'email_address' => $this->customerEmail()
+		,'first_name' => $this->customerNameF()
+		,'gender' => $this->customerGender('male', 'female')
+		,'last_name' => $this->customerNameL()
+		// 2017-02-18
+		// [Spryng] The documentation says that the «organisation» is a required parameter
+		// of a «createCustomer» API request, but really the request works without it:
+		// https://mage2.pro/t/2844
+		//,'organisation' => 'Mage2.PRO'
+		// 2017-02-18
+		// Нельзя передавать одновременно и имя, и название организации.
+		//,'organisation_name' => 'Mage2.PRO'
+		,'phone_number' => $sa->getTelephone()
+		,'postal_code' => $sa->getPostcode()
+		,'region' => $sa->getRegion()
+		// 2017-02-18
+		// https://mage2.pro/t/2566
+		// Этот параметр необязателен.
+		//,'social_security_number' => $sa->getVatId()
+		,'street_address' => df_cc_s($sa->getStreetLine(1), $sa->getStreetLine(2))
+		,'title' => $this->customerGender('mr', 'ms')
 	];}
 
 	/**
