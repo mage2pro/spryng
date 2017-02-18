@@ -207,10 +207,26 @@
 					<depends><field id='enable'>1</field></depends>
 				</field>
 				<field
+					id='dsd'
+					translate='label'
+					type='text'
+					sortOrder='14'
+					showInDefault='1'
+					showInWebsite='1'
+					showInStore='1'
+				>
+					<label>Dynamic statement descripor</label>
+					<comment><![CDATA[An arbitrary string to be displayed <a href='https://stripe.com/blog/dynamic-descriptors' target='_blank' title='A blog article from the Stripe website.'>on your customer's bank card statement</a>.
+<br/>This may be up to <b>22</b> characters, may not include <b><>"'</b> characters, and will appear on your customer's statement in capital letters.
+<br/>Non-ASCII characters are automatically stripped.]]></comment>
+					<depends><field id='enable'>1</field></depends>
+					<validate>validate-length maximum-length-22</validate>
+				</field>
+				<field
 					id='requireBillingAddress'
 					translate='label'
 					type='Df\Framework\Form\Element\Checkbox'
-					sortOrder='14'
+					sortOrder='15'
 					showInDefault='1'
 					showInWebsite='1'
 					showInStore='1'
@@ -224,7 +240,7 @@
 					id='min_order_total'
 					translate='label'
 					type='text'
-					sortOrder='15'
+					sortOrder='16'
 					showInDefault='1'
 					showInWebsite='1'
 					showInStore='1'
@@ -238,7 +254,7 @@
 					id='max_order_total'
 					translate='label'
 					type='text'
-					sortOrder='16'
+					sortOrder='17'
 					showInDefault='1'
 					showInWebsite='1'
 					showInStore='1'
@@ -252,7 +268,7 @@
 					id='country_restriction'
 					translate='label'
 					type='select'
-					sortOrder='17'
+					sortOrder='18'
 					showInDefault='1'
 					showInWebsite='1'
 					showInStore='1'
@@ -265,7 +281,7 @@
 					id='countries'
 					translate='label'
 					type='Df\Framework\Form\Element\Multiselect'
-					sortOrder='18'
+					sortOrder='19'
 					showInDefault='1'
 					showInWebsite='1'
 					showInStore='1'
