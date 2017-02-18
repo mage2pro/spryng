@@ -2,11 +2,10 @@
 // 2017-02-15
 namespace Dfe\Spryng\T;
 use Dfe\Spryng\Settings as S;
-use SpryngPaymentsApiPhp\Object\Account as lAccount;
 use SpryngPaymentsApiPhp\Object\Card as lCard;
 use SpryngPaymentsApiPhp\Object\Transaction as lCharge;
 final class Common extends TestCase {
-	/** 2017-02-15 */
+	/** @test 2017-02-15 */
 	function t00() {}
 
 	/** 2017-02-15 */
@@ -17,13 +16,6 @@ final class Common extends TestCase {
 
 	/** 2017-02-15 */
 	function t02() {
-		/** @var lAccount $accounts */
-		$account = df_first($this->api()->account->getAll());
-		echo df_json_encode_pretty($account);
-	}
-
-	/** 2017-02-15 */
-	function t03() {
 		/** @var lCard $card */
 		$card = $this->api()->card->create([
 			'card_number' => '4024007108173153'
@@ -34,8 +26,8 @@ final class Common extends TestCase {
 		echo df_json_encode_pretty($card);
 	}
 
-	/** @test 2017-02-15 */
-	function t04() {
+	/** 2017-02-15 */
+	function t03() {
 		/** @var lCard $card */
 		$card = $this->api()->card->create([
 			'card_number' => '4024007108173153'
@@ -63,7 +55,4 @@ final class Common extends TestCase {
 		// [Spryng] An example of the «createTransaction» API method response
 		// https://mage2.pro/t/2800
 	}
-
-	/** 2017-02-15 */
-	function t05() {echo df_json_encode_pretty(S::s()->account());}
 }
