@@ -36,6 +36,15 @@ final class Charge extends \Df\StripeClone\Charge {
 
 	/**
 	 * 2017-02-18
+	 * @override
+	 * @see \Df\StripeClone\Charge::keyCapture()
+	 * @used-by \Df\StripeClone\Charge::request()
+	 * @return string
+	 */
+	protected function keyCapture() {return 'capture_now';}
+
+	/**
+	 * 2017-02-18
 	 * Ключ, значением которого является токен банковской карты.
 	 * Этот ключ передаётся как параметр ДВУХ РАЗНЫХ запросов к API ПС:
 	 * 1) в запросе на проведение транзакции (charge)
