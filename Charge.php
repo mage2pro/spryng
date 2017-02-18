@@ -61,7 +61,9 @@ final class Charge extends \Df\StripeClone\Charge {
 		//,'organisation_name' => 'Mage2.PRO'
 		,'phone_number' => $sa->getTelephone()
 		,'postal_code' => $sa->getPostcode()
-		,'region' => $sa->getRegion()
+		// 2017-02-18
+		// Передача null в качестве региона приводит к сбою.
+		,'region' => $sa->getRegion() ?: $sa->getCity()
 		// 2017-02-18
 		// https://mage2.pro/t/2566
 		// Этот параметр необязателен.
