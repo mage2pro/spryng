@@ -4,10 +4,10 @@ namespace Dfe\Spryng\T;
 use SpryngPaymentsApiPhp\Object\Card as lCard;
 use SpryngPaymentsApiPhp\Object\Customer as lCustomer;
 final class Customer extends TestCase {
-	/** @test 2017-02-15 */
+	/** 2017-02-15 */
 	function t00() {}
 
-	/** 2017-02-18 */
+	/** @test 2017-02-18 */
 	function t01() {
 		/** @var lCustomer $customer */
 		$customer = $this->api()->customer->create([
@@ -19,7 +19,9 @@ final class Customer extends TestCase {
 			,'gender' => 'male'
 			,'last_name' => 'Fedyuk'
 			,'organisation' => 'Mage2.PRO'
-			,'organisation_name' => 'Mage2.PRO'
+			// 2017-02-18
+			// Нельзя передавать одновременно и имя, и название организации.
+			//,'organisation_name' => 'Mage2.PRO'
 			,'phone_number' => '+46850506000'
 			,'postal_code' => '111 64'
 			,'region' => 'Stockholm'
