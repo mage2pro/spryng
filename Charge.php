@@ -38,11 +38,11 @@ final class Charge extends \Df\StripeClone\Charge {
 	/**
 	 * 2017-02-18
 	 * @override
-	 * @see \Df\StripeClone\Charge::keyCapture()
+	 * @see \Df\StripeClone\Charge::k_Capture()
 	 * @used-by \Df\StripeClone\Charge::request()
 	 * @return string
 	 */
-	protected function keyCapture() {return 'capture_now';}
+	protected function k_Capture() {return 'capture_now';}
 
 	/**
 	 * 2017-02-18
@@ -53,47 +53,47 @@ final class Charge extends \Df\StripeClone\Charge {
 	 * Spryng пока не поддерживает (или не документировал) сохранение банковской карты
 	 * для будущего повторного использования.
 	 * @override
-	 * @see \Df\StripeClone\Charge::keyCardId()
+	 * @see \Df\StripeClone\Charge::k_CardId()
 	 * @used-by \Df\StripeClone\Charge::request()
 	 * @used-by \Df\StripeClone\Charge::newCard()
 	 * @return string
 	 */
-	protected function keyCardId() {return 'card';}
+	protected function k_CardId() {return 'card';}
 
 	/**
 	 * 2017-02-18
 	 * @override
-	 * @see \Df\StripeClone\Charge::keyCardId()
+	 * @see \Df\StripeClone\Charge::k_CardId()
 	 * @used-by \Df\StripeClone\Charge::newCard()
 	 * @return string
 	 */
-	protected function keyCustomerEmail() {return 'email_address';}
+	protected function kc_Email() {return 'email_address';}
 
 	/**
 	 * 2017-02-18
 	 * https://api.spryngpayments.com/v1/#operation/createTransaction
 	 * @override
-	 * @see \Df\StripeClone\Charge::keyDSD()
+	 * @see \Df\StripeClone\Charge::k_DSD()
 	 * @used-by \Df\StripeClone\Charge::request()
 	 * @return string
 	 */
-	protected function keyDSD() {return 'dynamic_descriptor';}
+	protected function k_DSD() {return 'dynamic_descriptor';}
 
 	/**
 	 * 2017-02-18
 	 * @override
-	 * @see \Df\StripeClone\Charge::keysExcluded()
+	 * @see \Df\StripeClone\Charge::k_Excluded()
 	 * @used-by \Df\StripeClone\Charge::request()
 	 * @return string[]
 	 */
-	protected function keysExcluded() {return [parent::K_CURRENCY, parent::K_DESCRIPTION];}
+	protected function k_Excluded() {return [parent::K_CURRENCY, parent::K_DESCRIPTION];}
 
 	/**
 	 * 2017-02-18
 	 * @override
-	 * @see \Df\StripeClone\Charge::keysExcludedForCustomer()
+	 * @see \Df\StripeClone\Charge::kc_Excluded()
 	 * @used-by \Df\StripeClone\Charge::newCard()
 	 * @return string[]
 	 */
-	protected function keysExcludedForCustomer() {return [parent::KC_DESCRIPTION];}
+	protected function kc_Excluded() {return [parent::KC_DESCRIPTION];}
 }
