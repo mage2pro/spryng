@@ -31,6 +31,7 @@ final class Customer extends TestCase {
 			,'region' => 'Stockholm'
 			// 2017-02-18
 			// https://mage2.pro/t/2566
+			// Этот параметр необязателен.
 			,'social_security_number' => '410321-9202'
 			,'street_address' => 'Nils Ericsons Plan 4'
 			,'title' => 'mr'
