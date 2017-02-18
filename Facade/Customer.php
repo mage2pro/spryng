@@ -1,7 +1,9 @@
 <?php
 namespace Dfe\Spryng\Facade;
+use SpryngPaymentsApiPhp\Client as API;
 use SpryngPaymentsApiPhp\Object\Customer as C;
 // 2017-02-17
+/** @method \Dfe\Spryng\Method m() */
 final class Customer extends \Df\StripeClone\Facade\Customer {
 	/**
 	 * 2017-02-17
@@ -22,7 +24,7 @@ final class Customer extends \Df\StripeClone\Facade\Customer {
 	 * @param array(string => mixed) $p
 	 * @return C
 	 */
-	function create(array $p) {return null;}
+	function create(array $p) {return $this->api()->customer->create($p);}
 
 	/**
 	 * 2017-02-17
@@ -55,4 +57,10 @@ final class Customer extends \Df\StripeClone\Facade\Customer {
 	 * @see \Dfe\Stripe\Facade\Charge::cardData()
 	 */
 	protected function cardsData($c) {return null;}
+
+	/**
+	 * 2017-02-17
+	 * @return API
+	 */
+	private function api() {return $this->m()->api();}
 }
