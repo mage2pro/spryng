@@ -87,4 +87,13 @@ final class Charge extends \Df\StripeClone\Charge {
 	 * @return string[]
 	 */
 	protected function keysExcluded() {return [parent::K_CURRENCY, parent::K_DESCRIPTION];}
+
+	/**
+	 * 2017-02-18
+	 * @override
+	 * @see \Df\StripeClone\Charge::keysExcludedForCustomer()
+	 * @used-by \Df\StripeClone\Charge::newCard()
+	 * @return string[]
+	 */
+	protected function keysExcludedForCustomer() {return [parent::KC_DESCRIPTION];}
 }
