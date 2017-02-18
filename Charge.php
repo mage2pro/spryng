@@ -5,17 +5,23 @@ namespace Dfe\Spryng;
 final class Charge extends \Df\StripeClone\Charge {
 	/**
 	 * 2017-02-18
+	 * Spryng пока не поддерживает (или не документировал) сохранение банковской карты
+	 * для будущего повторного использования, поэтому мы просто возвращаем null.
+	 * Этого достаточно, чтобы @used-by \Df\StripeClone\Charge::usePreviousCard()
+	 * всегда возвращала false.
 	 * @override
 	 * @see \Df\StripeClone\Charge::cardIdPrefix()
 	 * @used-by \Df\StripeClone\Charge::usePreviousCard()
 	 * @return string
 	 */
 	protected function cardIdPrefix() {return null;}
+	
 	/**
 	 * 2017-02-18
 	 * Ключ, значением которого является токен банковской карты.
 	 * Этот ключ передаётся как параметр ДВУХ РАЗНЫХ запросов к API ПС:
 	 * 1) в запросе на проведение транзакции (charge)
+	 * https://api.spryngpayments.com/v1/#operation/createTransaction
 	 * 2) в запросе на сохранение банковской карты для будущего повторного использования
 	 * Spryng пока не поддерживает (или не документировал) сохранение банковской карты
 	 * для будущего повторного использования.
