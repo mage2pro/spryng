@@ -18,7 +18,11 @@ final class Customer extends TestCase {
 			,'first_name' => 'Dmitry'
 			,'gender' => 'male'
 			,'last_name' => 'Fedyuk'
-			,'organisation' => 'Mage2.PRO'
+			// 2017-02-18
+			// [Spryng] The documentation says that the «organisation» is a required parameter
+			// of a «createCustomer» API request, but really the request works without it:
+			// https://mage2.pro/t/2844
+			//,'organisation' => 'Mage2.PRO'
 			// 2017-02-18
 			// Нельзя передавать одновременно и имя, и название организации.
 			//,'organisation_name' => 'Mage2.PRO'
@@ -31,5 +35,6 @@ final class Customer extends TestCase {
 			,'street_address' => 'Nils Ericsons Plan 4'
 			,'title' => 'mr'
 		]);
+		echo df_json_encode_pretty($customer);
 	}
 }
