@@ -16,7 +16,6 @@ final class Charge extends \Df\StripeClone\Charge {
 	 * Этот ключ передаётся как параметр при создании 2 разных объектов:
 	 * 1) как источник средств для charge
 	 * 2) как token для customer.
-	 * Spryng пока не поддерживает (или не документировал) сохранение покупателей.
 	 * @override
 	 * @see \Df\StripeClone\Charge::keyCardId()
 	 * @used-by \Df\StripeClone\Charge::request()
