@@ -24,6 +24,9 @@ final class Method extends \Df\StripeClone\Method {
 
 	/**
 	 * 2017-02-15
+	 * 2017-02-19
+	 * [Spryng] It would be nice to have an unique URL
+	 * for each transaction inside the merchant interface: https://mage2.pro/t/2847
 	 * @override
 	 * @see \Df\StripeClone\Method::transUrlBase()
 	 * @used-by \Df\StripeClone\Method::transUrl()
