@@ -77,14 +77,16 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	function refund($id, $amount) {return null;}
 
 	/**
-	 * 2017-02-17
+	 * 2017-02-19
+	 * https://api.spryngpayments.com/v1/#operation/voidAuthTransaction
+	 * https://mage2.pro/t/2851
 	 * @override
 	 * @see \Df\StripeClone\Facade\Charge::void()
 	 * @used-by \Df\StripeClone\Method::_refund()
 	 * @param string $id
 	 * @return object
 	 */
-	function void($id) {return null;}
+	function void($id) {return $this->apiT()->void($id);}
 
 	/**
 	 * 2017-02-17
@@ -98,7 +100,6 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	 */
 	protected function cardData($c) {return $c->card;}
 
-
 	/**
 	 * 2017-02-17
 	 * @return API
@@ -110,5 +111,4 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	 * @return API_Transaction
 	 */
 	private function apiT() {return $this->api()->transaction;}
-
 }
