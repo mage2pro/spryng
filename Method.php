@@ -11,7 +11,15 @@ final class Method extends \Df\StripeClone\Method {
 	 * @used-by \Dfe\Spryng\Facade\Customer::api()
 	 * @return API
 	 */
-	final function api() {return $this->s()->api();}
+	function api() {return $this->s()->api();}
+
+	/**
+	 * 2017-02-19
+	 * @override
+	 * @see \Df\Payment\Method::canCapturePartial()
+	 * @return bool
+	 */
+	function canCapturePartial() {return true;}
 
 	/**
 	 * 2017-02-15
