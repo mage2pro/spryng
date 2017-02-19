@@ -3,6 +3,7 @@ The extension integrates your Magento 2 store with the **[Spryng](https://www.sp
 ## Demo videos
 
 1. [**Capture** a card payment](https://mage2.pro/t/topic/2853).
+2. [**Authorize** a card payment, and **capture** it from the **Magento** side](https://mage2.pro/t/topic/2854).
 
 ## Licensing
 It is a paid extension, not free.  
