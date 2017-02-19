@@ -3,6 +3,7 @@ namespace Dfe\Spryng\Facade;
 use Magento\Sales\Model\Order\Creditmemo as CM;
 use Magento\Sales\Model\Order\Payment as OP;
 use SpryngPaymentsApiPhp\Client as API;
+use SpryngPaymentsApiPhp\Controller\TransactionController as API_Transaction;
 use SpryngPaymentsApiPhp\Object\Transaction as C;
 // 2017-02-17
 /** @method \Dfe\Spryng\Method m() */
@@ -15,9 +16,10 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	 * @see \Df\StripeClone\Facade\Charge::capturePreauthorized()
 	 * @used-by \Df\StripeClone\Method::charge()
 	 * @param string $id
+	 * @param int|float $amount В формате и валюте ПС. Значение готово для применения в запросе API.
 	 * @return C
 	 */
-	function capturePreauthorized($id) {return $this->api()->transaction->capture($id);}
+	function capturePreauthorized($id, $amount) {return $this->apiT()->capture($id, $amount);}
 
 	/**
 	 * 2017-02-17
@@ -29,7 +31,7 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	 */
 	function create(array $p) {
 		/** @var C $result */
-		$result = $this->api()->transaction->create($p);
+		$result = $this->apiT()->create($p);
 		// 2017-02-19
 		// Why does a «createTransaction» API method response
 		// not contain the bank card information? https://mage2.pro/t/2812
@@ -96,9 +98,17 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	 */
 	protected function cardData($c) {return $c->card;}
 
+
 	/**
 	 * 2017-02-17
 	 * @return API
 	 */
 	private function api() {return $this->m()->api();}
+
+	/**
+	 * 2017-02-17
+	 * @return API_Transaction
+	 */
+	private function apiT() {return $this->api()->transaction;}
+
 }
