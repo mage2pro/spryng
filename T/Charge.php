@@ -4,10 +4,10 @@ namespace Dfe\Spryng\T;
 use SpryngPaymentsApiPhp\Object\Card as lCard;
 use SpryngPaymentsApiPhp\Object\Transaction as lCharge;
 final class Charge extends TestCase {
-	/** @test 2017-02-15 */
+	/** 2017-02-15 */
 	function t00() {}
 
-	/** 2017-02-15 */
+	/** @test 2017-02-15 */
 	function t01() {
 		/** @var lCard $card */
 		$card = $this->api()->card->create([
@@ -22,7 +22,7 @@ final class Charge extends TestCase {
 			,'amount' => '10000'
 			,'card' => $card->_id
 			,'customer_ip' => '127.0.0.1'
-			,'dynamic_descriptor' => 'Test transaction'
+			,'dynamic_descriptor' => 'MAGE2PRO'
 			// 2017-02-15
 			// «The payment product being used»
 			// https://www.spryngpayments.com/documentation/credit-cards/

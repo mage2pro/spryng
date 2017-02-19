@@ -4,10 +4,10 @@ namespace Dfe\Spryng\T;
 use SpryngPaymentsApiPhp\Object\Card as lCard;
 use SpryngPaymentsApiPhp\Object\Customer as lCustomer;
 final class Customer extends TestCase {
-	/** 2017-02-15 */
+	/** @test 2017-02-15 */
 	function t00() {}
 
-	/** @test 2017-02-18 */
+	/** 2017-02-18 */
 	function t01() {
 		/** @var lCustomer $customer */
 		$customer = $this->api()->customer->create([

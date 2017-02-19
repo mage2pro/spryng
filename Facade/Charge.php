@@ -25,7 +25,15 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	 * @param array(string => mixed) $p
 	 * @return C
 	 */
-	function create(array $p) {return $this->api()->transaction->create($p);}
+	function create(array $p) {
+		/** @var C $result */
+		$result = $this->api()->transaction->create($p);
+		// 2017-02-19
+		// Why does a «createTransaction» API method response
+		// not contain the bank card information? https://mage2.pro/t/2812
+		$result->card = $this->api()->card->getById($result->card->_id);
+		return $result;
+	}
 
 	/**
 	 * 2017-02-17
@@ -77,8 +85,6 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	/**
 	 * 2017-02-17
 	 * Информация о банковской карте.
-	 * Why does a «createTransaction» API method response
-	 * not contain the bank card information? https://mage2.pro/t/2812
 	 * @override
 	 * @see \Df\StripeClone\Facade\Charge::cardData()
 	 * @used-by \Df\StripeClone\Facade\Charge::card()
@@ -86,7 +92,7 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	 * @return \SpryngPaymentsApiPhp\Object\Card
 	 * @see \Dfe\Stripe\Facade\Customer::cardsData()
 	 */
-	protected function cardData($c) {return $this->api()->card->getById($c->card->_id);}
+	protected function cardData($c) {return $c->card;}
 
 	/**
 	 * 2017-02-17
