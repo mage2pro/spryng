@@ -8,14 +8,16 @@ use SpryngPaymentsApiPhp\Object\Transaction as C;
 /** @method \Dfe\Spryng\Method m() */
 final class Charge extends \Df\StripeClone\Facade\Charge {
 	/**
-	 * 2017-02-17
+	 * 2017-02-19
+	 * https://api.spryngpayments.com/v1/#operation/captureTransaction
+	 * https://mage2.pro/t/2850
 	 * @override
 	 * @see \Df\StripeClone\Facade\Charge::capturePreauthorized()
 	 * @used-by \Df\StripeClone\Method::charge()
 	 * @param string $id
 	 * @return C
 	 */
-	function capturePreauthorized($id) {return null;}
+	function capturePreauthorized($id) {return $this->api()->transaction->capture($id);}
 
 	/**
 	 * 2017-02-17
