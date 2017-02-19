@@ -1,11 +1,8 @@
 The extension integrates your Magento 2 store with the **[Spryng](https://www.spryngpayments.com)** payment service (Netherlands).
 
-## Screenshots
-### 1. Frontend. The payment form
-![](https://mage2.pro/uploads/default/original/2X/6/68f251cf13e37438f6da619d173a0c0dcdb7e1ff.png)
+## Demo videos
 
-### 2. Backend. The extension's settings
-![](https://mage2.pro/uploads/default/original/2X/7/73b606d2785a0664780dfd19cc7819080ca34a31.png)
+1. [**Capture** a card payment](https://mage2.pro/t/topic/2853).
 
 ## Licensing
 It is a paid extension, not free.  
@@ -64,3 +61,10 @@ I provide a [custom payment gateway integration service](https://mage2.pro/t/917
 ## Want to get the full rights for my extension?
 It is possible: the price depends on a extension and starts from $5.000.  
 You will get 2 years of support, updates, and free installation service for all your clients.
+
+## Screenshots
+### 1. Frontend. The payment form
+![](https://mage2.pro/uploads/default/original/2X/6/68f251cf13e37438f6da619d173a0c0dcdb7e1ff.png)
+
+### 2. Backend. The extension's settings
+![](https://mage2.pro/uploads/default/original/2X/7/73b606d2785a0664780dfd19cc7819080ca34a31.png)
