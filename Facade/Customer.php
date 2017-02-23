@@ -35,7 +35,7 @@ final class Customer extends \Df\StripeClone\Facade\Customer {
 	 * @param int $id
 	 * @return C|null
 	 */
-	function get($id) {return $this->api()->customer->getCustomerById($id);}
+	function get($id) {return $this->api()->customer->getById($id);}
 
 	/**
 	 * 2017-02-17
