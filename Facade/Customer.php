@@ -8,6 +8,16 @@ final class Customer extends \Df\StripeClone\Facade\Customer {
 	/**
 	 * 2017-02-17
 	 * @override
+	 * @see \Df\StripeClone\Facade\Customer::_get()
+	 * @used-by \Df\StripeClone\Facade\Customer::get()
+	 * @param int $id
+	 * @return C|null
+	 */
+	function _get($id) {return $this->api()->customer->getById($id);}
+
+	/**
+	 * 2017-02-17
+	 * @override
 	 * @see \Df\StripeClone\Facade\Customer::cardAdd()
 	 * @used-by \Df\StripeClone\Charge::newCard()
 	 * @param C $c
@@ -25,17 +35,6 @@ final class Customer extends \Df\StripeClone\Facade\Customer {
 	 * @return C
 	 */
 	function create(array $p) {return $this->api()->customer->create($p);}
-
-	/**
-	 * 2017-02-17
-	 * @override
-	 * @see \Df\StripeClone\Facade\Customer::get()
-	 * @used-by \Df\StripeClone\Charge::newCard()
-	 * @used-by \Df\StripeClone\ConfigProvider::cards()
-	 * @param int $id
-	 * @return C|null
-	 */
-	function get($id) {return $this->api()->customer->getById($id);}
 
 	/**
 	 * 2017-02-17
