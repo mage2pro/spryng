@@ -26,7 +26,7 @@ final class Settings extends \Df\StripeClone\Settings {
 	 * @return API
 	 */
 	public function api($s = null) {return dfc($this, function($test, $s) {return new API(
-		$this->p(($this->test() ? 'test' : 'live') . 'PrivateKey', $s), $test
+		$this->p(($this->test($s) ? 'test' : 'live') . 'PrivateKey', $s), $test
 	);}, [$s]);}
 
 	/**
