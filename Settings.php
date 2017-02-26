@@ -11,22 +11,23 @@ final class Settings extends \Df\StripeClone\Settings {
 	 * 2017-02-15
 	 * @param null|string|int|S|Store $s [optional]
 	 * @return lAccount
+	 * @used-by currency()
+	 * @used-by \Dfe\Spryng\Charge::pCharge()
 	 */
 	public function account($s = null) {return dfc($this, function($s) {return
-		$this->api(null, $s)->account->getById($this->testable('account', $s))
+		$this->api($s)->account->getById($this->testable('account', $s))
 	;}, [$s]);}
 
 	/**
 	 * 2017-02-15
 	 * @used-by account()
 	 * @used-by \Dfe\Spryng\Method::api()
-	 * @param bool|null $test [optional]
 	 * @param null|string|int|S|Store $s [optional]
 	 * @return API
 	 */
-	public function api($test = null, $s = null) {return dfc($this, function($test, $s) {return new API(
-		$this->p(($test ? 'test' : 'live') . 'PrivateKey', $s), $test
-	);}, [!is_null($test) ? $test : $this->test(), $s]);}
+	public function api($s = null) {return dfc($this, function($test, $s) {return new API(
+		$this->p(($this->test() ? 'test' : 'live') . 'PrivateKey', $s), $test
+	);}, [$s]);}
 
 	/**
 	 * 2017-02-18   
