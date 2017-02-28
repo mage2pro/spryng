@@ -1,8 +1,15 @@
 <?php
 namespace Dfe\Spryng\T;
 use SpryngPaymentsApiPhp\Client as API;
-// 2017-02-15
-/** @method \Dfe\Spryng\Settings s() */
+/**
+ * 2017-02-15
+ * @see \Dfe\Spryng\T\Account
+ * @see \Dfe\Spryng\T\Card
+ * @see \Dfe\Spryng\T\Charge
+ * @see \Dfe\Spryng\T\Common
+ * @see \Dfe\Spryng\T\Customer
+ * @method \Dfe\Spryng\Settings s()
+ */
 abstract class TestCase extends \Df\Core\TestCase {
 	/**
 	 * 2017-02-15

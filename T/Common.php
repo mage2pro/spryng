@@ -1,14 +1,13 @@
 <?php
 // 2017-02-15
 namespace Dfe\Spryng\T;
-use Dfe\Spryng\Settings as S;
 final class Common extends TestCase {
 	/** @test 2017-02-15 */
 	function t00() {}
 
 	/** 2017-02-15 */
 	function t01() {
-		echo S::s()->publicKey() . "\n";
-		echo S::s()->privateKey() . "\n";
+		echo $this->s()->publicKey() . "\n";
+		echo $this->s()->privateKey() . "\n";
 	}
 }

@@ -1,7 +1,6 @@
 <?php
 // 2017-02-18
 namespace Dfe\Spryng\T;
-use SpryngPaymentsApiPhp\Object\Card as lCard;
 use SpryngPaymentsApiPhp\Object\Customer as lCustomer;
 final class Customer extends TestCase {
 	/** @test 2017-02-15 */
@@ -39,8 +38,5 @@ final class Customer extends TestCase {
 		//echo df_json_encode_pretty($customer);
 		/** @var string $id */
 		$id = $customer->_id;
-		/** @var lCustomer $customer2 */
-		$customer2 = $this->api()->customer->getCustomerById($id);
-		//xdebug_break();
 	}
 }
