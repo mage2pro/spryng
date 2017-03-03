@@ -14,7 +14,7 @@ final class Settings extends \Df\StripeClone\Settings {
 	 * @used-by currency()
 	 * @used-by \Dfe\Spryng\Charge::pCharge()
 	 */
-	public function account($s = null) {return dfc($this, function($s) {return
+	function account($s = null) {return dfc($this, function($s) {return
 		$this->api($s)->account->getById($this->testable('account', $s))
 	;}, [$s]);}
 
@@ -25,7 +25,7 @@ final class Settings extends \Df\StripeClone\Settings {
 	 * @param null|string|int|S|Store $s [optional]
 	 * @return API
 	 */
-	public function api($s = null) {return dfc($this, function($s) {return new API(
+	function api($s = null) {return dfc($this, function($s) {return new API(
 		$this->privateKey($s), $this->test($s)
 	);}, [$s]);}
 
