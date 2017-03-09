@@ -9,7 +9,6 @@ define([
 	 * @returns {String[]}
 	 */
 	getCardTypes: function() {return ['VI', 'MC', 'AE', 'JCB', 'DI', 'DN'];},
-
 	/**
 	 * 2017-02-16
 	 * @override
@@ -19,7 +18,6 @@ define([
 	 * @returns {Boolean}
 	 */
 	tokenCheckStatus: function(status) {return status;},
-
 	/**
 	 * 2017-02-16
 	 * How to submit the Spryng bank card form programmatically? https://mage2.pro/t/2799
@@ -53,7 +51,6 @@ define([
 		});
 		return null;
 	},
-
 	/**
 	 * 2017-02-16
 	 * @override
@@ -64,7 +61,6 @@ define([
 	 * @returns {String}
 	 */
 	tokenErrorMessage: function(status, resp) {return resp;},
-
 	/**
 	 * 2017-02-16
 	 * @override
@@ -74,7 +70,6 @@ define([
 	 * @returns {String}
 	 */
 	tokenFromResponse: function(resp) {return resp;},
-
 	/**
 	 * 2017-02-16
 	 * How to submit the Spryng bank card form programmatically? https://mage2.pro/t/2799
@@ -89,7 +84,6 @@ define([
 		,expiry_year: this.creditCardExpYear2()
 		,card_number: this.creditCardNumber()
 	};},
-
 	/**
 	 * 2017-02-16
 	 * @private
