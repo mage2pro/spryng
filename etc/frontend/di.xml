@@ -17,7 +17,4 @@
 			</argument>
 		</arguments>
 	</type>
-	<virtualType name='Dfe\Spryng\ConfigProvider' type='Df\StripeClone\ConfigProvider'>
-		<arguments><argument name='module' xsi:type='string'>Dfe_Spryng</argument></arguments>
-	</virtualType>
 </config>

@@ -83,6 +83,7 @@ define([
 		,expiry_month: this.creditCardExpMonth()
 		,expiry_year: this.creditCardExpYear2()
 		,card_number: this.creditCardNumber()
+		,organisation: this.config('organisation')
 	};},
 	/**
 	 * 2017-02-16
