@@ -3,7 +3,7 @@ namespace Dfe\Spryng;
 use Magento\Sales\Model\Order\Address;
 // 2017-02-18
 // https://api.spryngpayments.com/v1/#operation/createTransaction
-/** @method Settings ss() */
+/** @method Settings s() */
 final class Charge extends \Df\StripeClone\Charge {
 	/**
 	 * 2017-02-18
@@ -27,7 +27,7 @@ final class Charge extends \Df\StripeClone\Charge {
 	 * @return array(string => mixed)
 	 */
 	protected function pCharge() {return [
-		'account' => $this->ss()->account()->_id
+		'account' => $this->s()->account()->_id
 		,'customer_ip' => $this->customerIp()
 		// 2017-02-18
 		// [Spryng][API] It looks like the description of the «merchant_reference»

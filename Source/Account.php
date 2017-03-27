@@ -4,12 +4,12 @@ use Dfe\Spryng\Settings as S;
 use SpryngPaymentsApiPhp\Object\Account as lAccount;
 // 2017-02-15
 /** @method S ss() */
-final class Account extends \Df\Config\Source\Testable\Api {
+final class Account extends \Df\Payment\Source\Testable\Api {
 	/**
 	 * 2017-02-15
 	 * @override
-	 * @see \Df\Config\Source\Testable\Api::apiKeyName()
-	 * @used-by \Df\Config\Source\Testable\Api::map()
+	 * @see \Df\Payment\Source\Testable\Api::apiKeyName()
+	 * @used-by \Df\Payment\Source\Testable\Api::map()
 	 * @return string
 	 */
 	protected function apiKeyName() {return 'PrivateKey';}
@@ -17,8 +17,8 @@ final class Account extends \Df\Config\Source\Testable\Api {
 	/**
 	 * 2017-02-15
 	 * @override
-	 * @see \Df\Config\Source\Testable\Api::apiKeyTitle()
-	 * @used-by \Df\Config\Source\Testable\Api::map()
+	 * @see \Df\Payment\Source\Testable\Api::apiKeyTitle()
+	 * @used-by \Df\Payment\Source\Testable\Api::map()
 	 * @return string
 	 */
 	protected function apiKeyTitle() {return 'an API Key';}
@@ -26,8 +26,8 @@ final class Account extends \Df\Config\Source\Testable\Api {
 	/**
 	 * 2017-02-15
 	 * @override
-	 * @see \Df\Config\Source\Testable\Api::fetch()
-	 * @used-by \Df\Config\Source\Testable\Api::map()
+	 * @see \Df\Payment\Source\Testable\Api::fetch()
+	 * @used-by \Df\Payment\Source\Testable\Api::map()
 	 * @param string $token
 	 * @return array(string => string)
 	 */
