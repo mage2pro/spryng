@@ -1,7 +1,7 @@
 <?php
 namespace Dfe\Spryng\Source;
 // 2017-02-16
-final class Prefill extends \Df\Config\SourceT {
+final class Prefill extends \Df\Config\Source {
 	/**
 	 * 2017-02-16
 	 * https://mage2.pro/t/2759
@@ -10,7 +10,7 @@ final class Prefill extends \Df\Config\SourceT {
 	 * @used-by \Df\Config\Source::toOptionArray()
 	 * @return array(string => string)
 	 */
-	protected function map() {return $this->addKeysToValues([
+	protected function map() {return self::addKeysToValues([
 		'4024007108173153' => 'Visa'
 		,'4024007108066423' => 'Visa'
 		,'4929877953801082' => 'Visa'
