@@ -75,7 +75,7 @@ final class Charge extends TestCase {
 	 * [Spryng] An example of the «captureTransaction» API method response: https://mage2.pro/t/2850
 	 */
 	function t03_auth_and_capture_partial() {
-		$amount = 10000;
+		$a = 10000;
 		/** @var lCard $card */
 		$card = $this->api()->card->create([
 			'card_number' => '4024007108173153'
@@ -86,7 +86,7 @@ final class Charge extends TestCase {
 		/** @var lCharge $transaction */
 		$charge = $this->api()->transaction->create([
 			'account' => $this->acccountId()
-			,'amount' => $amount
+			,'amount' => $a
 			,'card' => $card->_id
 			,'capture_now' => false
 			,'customer_ip' => '127.0.0.1'
@@ -97,7 +97,7 @@ final class Charge extends TestCase {
 			,'payment_product' => 'card'
 			,'user_agent' => 'Mage2.PRO'
 		]);
-		$charge = $this->api()->transaction->capture($charge->_id, $amount / 2);
+		$charge = $this->api()->transaction->capture($charge->_id, $a / 2);
 		echo df_json_encode_pretty($charge);
 	}
 
