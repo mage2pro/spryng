@@ -2,9 +2,9 @@ The extension integrates your Magento 2 store with the **[Spryng](https://www.sp
 
 ## Demo videos
 
-1. [**Capture** a card payment](https://mage2.pro/t/topic/2853).
-2. [**Authorize** a card payment, and **capture** it from the **Magento** side](https://mage2.pro/t/topic/2854).
-3. [**Authorize** a card payment, and **void** it from the **Magento** side](https://mage2.pro/t/topic/2857).
+1. [**Capture** a card payment](https://mage2.pro/t/2853).
+2. [**Authorize** a card payment, and **capture** it from the **Magento** side](https://mage2.pro/t/2854).
+3. [**Authorize** a card payment, and **void** it from the **Magento** side](https://mage2.pro/t/2857).
 
 ## How to buy
 You can buy it with PayPal [here](https://mage2.pro/t/2666).  
@@ -30,7 +30,7 @@ Please read the [testing policy](https://mage2.pro/t/2590) before installation.
 ## Support
 - [The extension's **forum** branch](https://mage2.pro/c/extensions/spryng).
 - [Where and how to report a Mage2.PRO extension's issue?](https://mage2.pro/t/2034)
-- I also provide a **[generic Magento 2 support](https://mage2.pro/t/topic/755)** and [Magento 2 installation service](https://mage2.pro/t/748).
+- I also provide a **[generic Magento 2 support](https://mage2.pro/t/755)** and [Magento 2 installation service](https://mage2.pro/t/748).
 
 ## Want to be notified about the extension's updates?
 - [Subscribe](https://mage2.pro/t/2540) to the extension's [forum branch](https://mage2.pro/c/extensions/spryng).
