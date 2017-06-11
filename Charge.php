@@ -96,8 +96,8 @@ final class Charge extends \Df\StripeClone\Charge {
 	 * @override
 	 * @see \Df\StripeClone\Charge::k_CardId()
 	 * @used-by kc_Excluded()
-	 * @used-by \Df\StripeClone\Charge::request()
 	 * @used-by \Df\StripeClone\Charge::newCard()
+	 * @used-by \Df\StripeClone\Charge::request()
 	 * @return string
 	 */
 	protected function k_CardId() {return 'card';}
