@@ -5,6 +5,16 @@ namespace Dfe\Spryng\P;
 /** @method \Dfe\Spryng\Settings s() */
 final class Charge extends \Df\StripeClone\P\Charge {
 	/**
+	 * 2017-02-18  Ключ, значением которого является токен банковской карты.
+	 * @override
+	 * @see \Df\StripeClone\P\Charge::k_CardId()
+	 * @used-by kc_Excluded()
+	 * @used-by \Df\StripeClone\P\Charge::request()
+	 * @return string
+	 */
+	function k_CardId() {return 'card';}
+
+	/**
 	 * 2017-02-18
 	 * Spryng пока не поддерживает (или не документировал) сохранение банковской карты
 	 * для будущего повторного использования, поэтому мы просто возвращаем null.
@@ -47,16 +57,6 @@ final class Charge extends \Df\StripeClone\P\Charge {
 	 * @return string
 	 */
 	protected function k_Capture() {return 'capture_now';}
-
-	/**
-	 * 2017-02-18  Ключ, значением которого является токен банковской карты.
-	 * @override
-	 * @see \Df\StripeClone\P\Charge::k_CardId()
-	 * @used-by kc_Excluded()
-	 * @used-by \Df\StripeClone\P\Charge::request()
-	 * @return string
-	 */
-	protected function k_CardId() {return 'card';}
 
 	/**
 	 * 2017-02-18

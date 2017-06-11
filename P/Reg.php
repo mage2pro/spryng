@@ -40,19 +40,6 @@ final class Reg extends \Df\StripeClone\P\Reg {
 	];}
 
 	/**
-	 * 2017-06-11
-	 * Ключ, значением которого является токен банковской карты.
-	 * Этот ключ передаётся как параметр в запросе на сохранение банковской карты
-	 * для будущего повторного использования при регистрации нового покупателя.
-	 * @override
-	 * @see \Df\StripeClone\P\Reg::k_CardId()
-	 * @used-by \Df\StripeClone\P\Reg::request()
-	 * @used-by k_Excluded()
-	 * @return string
-	 */
-	protected function k_CardId() {return 'card';}
-
-	/**
 	 * 2017-02-18
 	 * @override
 	 * @see \Df\StripeClone\P\Reg::k_Email()
