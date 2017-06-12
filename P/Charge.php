@@ -16,19 +16,6 @@ final class Charge extends \Df\StripeClone\P\Charge {
 
 	/**
 	 * 2017-02-18
-	 * Spryng пока не поддерживает (или не документировал) сохранение банковской карты
-	 * для будущего повторного использования, поэтому мы просто возвращаем null.
-	 * Этого достаточно, чтобы @used-by \Df\StripeClone\P\Charge::usePreviousCard()
-	 * всегда возвращала false.
-	 * @override
-	 * @see \Df\StripeClone\P\Charge::cardIdPrefix()
-	 * @used-by \Df\StripeClone\P\Charge::usePreviousCard()
-	 * @return string
-	 */
-	protected function cardIdPrefix() {return null;}
-
-	/**
-	 * 2017-02-18
 	 * Здесь у order ещё нет id, но уже есть incrementId (потому что зарезервирован).
 	 * @override
 	 * @see \Df\StripeClone\P\Charge::p()

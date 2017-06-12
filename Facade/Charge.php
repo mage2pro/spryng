@@ -23,6 +23,19 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	function capturePreauthorized($id, $a) {return $this->apiT()->capture($id, $a);}
 
 	/**
+	 * 2017-02-18
+	 * Spryng пока не поддерживает (или не документировал) сохранение банковской карты
+	 * для будущего повторного использования, поэтому мы просто возвращаем null.
+	 * Этого достаточно, чтобы @used-by \Df\StripeClone\P\Charge::usePreviousCard()
+	 * всегда возвращала false.
+	 * @override
+	 * @see \Df\StripeClone\Facade\Charge::cardIdPrefix()
+	 * @used-by \Df\StripeClone\Payer::usePreviousCard()
+	 * @return string
+	 */
+	function cardIdPrefix() {return null;}
+
+	/**
 	 * 2017-02-17
 	 * @override
 	 * @see \Df\StripeClone\Facade\Charge::create()
