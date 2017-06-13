@@ -23,10 +23,10 @@ define([
 	 * How to submit the Spryng bank card form programmatically? https://mage2.pro/t/2799
 	 * @override
 	 * @see https://github.com/mage2pro/core/blob/2.0.11/StripeClone/view/frontend/web/main.js?ts=4#L21-L29
-	 * @used-by placeOrder()
+	 * @used-by Df_StripeClone/main::placeOrder()
+	 * https://github.com/mage2pro/core/blob/2.7.8/StripeClone/view/frontend/web/main.js?ts=4#L73
 	 * @param {Object} params
 	 * @param {Function} callback
-	 * @returns {Function}
 	 */
 	tokenCreate: function(params, callback) {
 		$.ajax(this.url('card'), {
@@ -49,7 +49,6 @@ define([
 			// Токен имеет вид: «58a5b584b7f62b51618718fd».
 			,success: function(data) {callback(true, data._id);}
 		});
-		return null;
 	},
 	/**
 	 * 2017-02-16
