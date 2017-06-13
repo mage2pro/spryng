@@ -12,8 +12,10 @@ define([
 	/**
 	 * 2017-02-16
 	 * @override
-	 * @see https://github.com/mage2pro/core/blob/2.0.11/StripeClone/view/frontend/web/main.js?ts=4#L12-L19
-	 * @used-by placeOrder()
+	 * @see Df_StripeClone/main::tokenCheckStatus()
+	 * https://github.com/mage2pro/core/blob/2.7.9/StripeClone/view/frontend/web/main.js?ts=4#L8-L15
+	 * @used-by Df_StripeClone/main::placeOrder()
+	 * https://github.com/mage2pro/core/blob/2.7.9/StripeClone/view/frontend/web/main.js?ts=4#L75
 	 * @param {Boolean} status
 	 * @returns {Boolean}
 	 */
@@ -24,7 +26,7 @@ define([
 	 * @override
 	 * @see https://github.com/mage2pro/core/blob/2.0.11/StripeClone/view/frontend/web/main.js?ts=4#L21-L29
 	 * @used-by Df_StripeClone/main::placeOrder()
-	 * https://github.com/mage2pro/core/blob/2.7.8/StripeClone/view/frontend/web/main.js?ts=4#L73
+	 * https://github.com/mage2pro/core/blob/2.7.9/StripeClone/view/frontend/web/main.js?ts=4#L73
 	 * @param {Object} params
 	 * @param {Function} callback
 	 */
@@ -74,9 +76,9 @@ define([
 	 * How to submit the Spryng bank card form programmatically? https://mage2.pro/t/2799
 	 * @override
 	 * @see Df_StripeClone/main::tokenParams()
-	 * https://github.com/mage2pro/core/blob/2.7.8/StripeClone/view/frontend/web/main.js?ts=4#L42-L48
+	 * https://github.com/mage2pro/core/blob/2.7.9/StripeClone/view/frontend/web/main.js?ts=4#L42-L48
 	 * @used-by Df_StripeClone/main::placeOrder()
-	 * https://github.com/mage2pro/core/blob/2.7.8/StripeClone/view/frontend/web/main.js?ts=4#L73
+	 * https://github.com/mage2pro/core/blob/2.7.9/StripeClone/view/frontend/web/main.js?ts=4#L73
 	 * @returns {Object}
 	 */
 	tokenParams: function() {return {
