@@ -15,7 +15,6 @@
 			<group
 				id='spryng'
 				translate='label'
-				type='text'
 				sortOrder='1916'
 				showInDefault='1'
 				showInWebsite='1'
