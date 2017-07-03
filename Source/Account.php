@@ -18,7 +18,7 @@ final class Account extends \Df\Payment\Source\API\Key\Testable {
 	 * 2017-02-15
 	 * @override
 	 * @see \Df\Config\Source\API\Key::apiKeyTitle()
-	 * @used-by \Df\Config\Source\API\Key::requirementTitle()
+	 * @used-by \Df\Config\Source\API\Key::requirement()
 	 * @return string
 	 */
 	protected function apiKeyTitle() {return 'an API Key';}
