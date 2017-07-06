@@ -35,7 +35,7 @@ final class Customer extends TestCase {
 			,'street_address' => 'Nils Ericsons Plan 4'
 			,'title' => 'mr'
 		]);
-		//echo df_json_encode_pretty($customer);
+		//echo df_json_encode($customer);
 		/** @var string $id */
 		$id = $customer->_id;
 	}

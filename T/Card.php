@@ -15,6 +15,6 @@ final class Card extends TestCase {
 			,'expiry_month' => '12'
 			,'expiry_year' => '18'
 		]);
-		echo df_json_encode_pretty($card);
+		echo df_json_encode($card);
 	}
 }

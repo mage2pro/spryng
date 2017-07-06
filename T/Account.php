@@ -10,9 +10,9 @@ final class Account extends TestCase {
 	function t01() {
 		/** @var lAccount $accounts */
 		$account = df_first($this->api()->account->getAll());
-		echo df_json_encode_pretty($account);
+		echo df_json_encode($account);
 	}
 
 	/** 2017-02-15 */
-	function t02() {echo df_json_encode_pretty($this->s()->account());}
+	function t02() {echo df_json_encode($this->s()->account());}
 }
