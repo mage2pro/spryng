@@ -35,7 +35,7 @@ final class Reg extends \Df\StripeClone\P\Reg {
 		// https://mage2.pro/t/2566
 		// Этот параметр необязателен.
 		//,'social_security_number' => $sa->getVatId()
-		,'street_address' => df_cc_s($sa->getStreetLine(1), $sa->getStreetLine(2))
+		,'street_address' => df_cc_s($sa->getStreet())
 		,'title' => $this->customerGender('mr', 'ms')
 	];}
 
