@@ -10,7 +10,7 @@ final class Reg extends \Df\StripeClone\P\Reg {
 	 * @used-by \Df\StripeClone\P\Reg::request()
 	 * @return array(string => mixed)
 	 */
-	protected function p() {/** @var A|null $sa */ $sa = $this->addressSB(); return [
+	protected function p() {/** @var A|null $sa */ $sa = $this->addressB(); return [
 		'city' => $sa->getCity()
 		,'country_code' => $sa->getCountryId()
 		,'date_of_birth' => $this->customerDobS()
