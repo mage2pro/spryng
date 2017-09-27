@@ -7,7 +7,7 @@ final class Common extends TestCase {
 
 	/** 2017-02-15 */
 	function t01() {
-		echo $this->s()->publicKey() . "\n";
-		echo $this->s()->privateKey() . "\n";
+		print_r($this->s()->publicKey() . "\n");
+		print_r($this->s()->privateKey() . "\n");
 	}
 }

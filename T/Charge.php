@@ -32,7 +32,7 @@ final class Charge extends TestCase {
 		$this->api()->transaction->refund($charge->_id, '5000', 'A reason.');
 		/** @var lCard $oCard */
 		$oCard = $this->api()->card->getById($charge->card->_id);
-		echo df_json_encode($charge);
+		print_r(df_json_encode($charge));
 		// 2017-02-16
 		// [Spryng] An example of the «createTransaction» API method response
 		// https://mage2.pro/t/2800
@@ -66,7 +66,7 @@ final class Charge extends TestCase {
 			,'user_agent' => 'Mage2.PRO'
 		]);
 		$charge = $this->api()->transaction->capture($charge->_id);
-		echo df_json_encode($charge);
+		print_r(df_json_encode($charge));
 	}
 
 	/**
@@ -98,7 +98,7 @@ final class Charge extends TestCase {
 			,'user_agent' => 'Mage2.PRO'
 		]);
 		$charge = $this->api()->transaction->capture($charge->_id, $a / 2);
-		echo df_json_encode($charge);
+		print_r(df_json_encode($charge));
 	}
 
 	/**
@@ -129,6 +129,6 @@ final class Charge extends TestCase {
 			,'user_agent' => 'Mage2.PRO'
 		]);
 		$charge = $this->api()->transaction->void($charge->_id);
-		echo df_json_encode($charge);
+		print_r(df_json_encode($charge));
 	}
 }
