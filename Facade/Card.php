@@ -26,6 +26,7 @@ final class Card implements \Df\StripeClone\Facade\ICard {
 	 * 2017-02-17
 	 * [Spryng] Why does a «getCard» API method response not contain the «issuer_country» property?
 	 * https://mage2.pro/t/2819
+	 * 2017-10-07 It should be an ISO-2 code or `null`.
 	 * @override
 	 * @see \Df\StripeClone\Facade\ICard::country()
 	 * @used-by \Df\StripeClone\CardFormatter::country()
