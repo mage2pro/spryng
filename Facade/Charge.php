@@ -103,8 +103,7 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	function void($id) {return $this->apiT()->void($id);}
 
 	/**
-	 * 2017-02-17
-	 * Информация о банковской карте.
+	 * 2017-02-17 The bank card data.
 	 * @override
 	 * @see \Df\StripeClone\Facade\Charge::cardData()
 	 * @used-by \Df\StripeClone\Facade\Charge::card()
