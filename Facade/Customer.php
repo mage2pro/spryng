@@ -5,15 +5,6 @@ use SpryngPaymentsApiPhp\Object\Customer as C;
 // 2017-02-17
 /** @method \Dfe\Spryng\Method m() */
 final class Customer extends \Df\StripeClone\Facade\Customer {
-	/**
-	 * 2017-02-17
-	 * @override
-	 * @see \Df\StripeClone\Facade\Customer::_get()
-	 * @used-by \Df\StripeClone\Facade\Customer::get()
-	 * @param int $id
-	 * @return C|null
-	 */
-	function _get($id) {return $this->api()->customer->getById($id);}
 
 	/**
 	 * 2017-02-17
@@ -45,6 +36,16 @@ final class Customer extends \Df\StripeClone\Facade\Customer {
 	 * @return string
 	 */
 	function id($c) {return $c->_id;}
+
+	/**
+	 * 2017-02-17
+	 * @override
+	 * @see \Df\StripeClone\Facade\Customer::_get()
+	 * @used-by \Df\StripeClone\Facade\Customer::get()
+	 * @param int $id
+	 * @return C|null
+	 */
+	protected function _get($id) {return $this->api()->customer->getById($id);}
 
 	/**
 	 * 2017-02-17

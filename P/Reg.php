@@ -40,6 +40,15 @@ final class Reg extends \Df\StripeClone\P\Reg {
 	];}
 
 	/**
+	 * 2017-10-10 The key name of a bank card token.
+	 * @override
+	 * @see \Df\StripeClone\P\Reg::k_CardId()
+	 * @used-by \Df\StripeClone\P\Reg::request()
+	 * @return string
+	 */
+	protected function k_CardId() {return null;}
+
+	/**
 	 * 2017-02-18
 	 * @override
 	 * @see \Df\StripeClone\P\Reg::k_Email()
@@ -55,5 +64,5 @@ final class Reg extends \Df\StripeClone\P\Reg {
 	 * @used-by \Df\StripeClone\P\Reg::request()
 	 * @return string[]
 	 */
-	protected function k_Excluded() {return [parent::K_DESCRIPTION, $this->k_CardId()];}
+	protected function k_Excluded() {return [parent::K_DESCRIPTION];}
 }

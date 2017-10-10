@@ -1,7 +1,7 @@
 <?php
 // 2017-02-15
 namespace Dfe\Spryng\T;
-final class Common extends TestCase {
+final class Common extends CaseT {
 	/** @test 2017-02-15 */
 	function t00() {}
 

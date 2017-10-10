@@ -10,7 +10,7 @@ use SpryngPaymentsApiPhp\Client as API;
  * @see \Dfe\Spryng\T\Customer
  * @method \Dfe\Spryng\Settings s()
  */
-abstract class TestCase extends \Df\Core\TestCase {
+abstract class CaseT extends \Df\Core\TestCase {
 	/**
 	 * 2017-02-15
 	 * @return string

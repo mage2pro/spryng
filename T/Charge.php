@@ -3,7 +3,7 @@
 namespace Dfe\Spryng\T;
 use SpryngPaymentsApiPhp\Object\Card as lCard;
 use SpryngPaymentsApiPhp\Object\Transaction as lCharge;
-final class Charge extends TestCase {
+final class Charge extends CaseT {
 	/** @test 2017-02-15 */
 	function t00() {}
 
