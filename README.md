@@ -1,4 +1,4 @@
-The extension integrates your Magento 2 based webstore with the **[Spryng](https://www.spryngpayments.com)** payment service (the Netherlands).
+This extension integrates a Magento 2 based webstore with the **[Spryng](https://www.spryngpayments.com)** payment service (the Netherlands).
 
 ## Demo videos
 
