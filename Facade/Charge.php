@@ -93,12 +93,11 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	/**
 	 * 2017-02-18
 	 * Spryng пока не поддерживает (или не документировал) сохранение банковской карты
-	 * для будущего повторного использования, поэтому мы просто возвращаем null.
-	 * Этого достаточно, чтобы @used-by \Df\StripeClone\P\Charge::usePreviousCard()
-	 * всегда возвращала false.
+	 * для будущего повторного использования, поэтому мы просто возвращаем `null`.
+	 * Этого достаточно, чтобы @used-by \Df\StripeClone\P\Charge::tokenIsNew() всегда возвращала `false`.
 	 * @override
 	 * @see \Df\StripeClone\Facade\Charge::cardIdPrefix()
-	 * @used-by \Df\StripeClone\Payer::usePreviousCard()
+	 * @used-by \Df\StripeClone\Payer::tokenIsNew()
 	 * @return string
 	 */
 	protected function cardIdPrefix() {return null;}
