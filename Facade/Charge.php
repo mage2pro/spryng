@@ -58,7 +58,7 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	 * (while using the Spryng PHP SDK): https://mage2.pro/t/2800
 	 * @override
 	 * @see \Df\StripeClone\Facade\Charge::pathToCard()
-	 * @used-by \Df\StripeClone\Block\Info::prepare()
+	 * @used-by \Df\StripeClone\Block\Info::cardData()
 	 * @used-by \Df\StripeClone\Facade\Charge::cardData()
 	 * @return string
 	 */
