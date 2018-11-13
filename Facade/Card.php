@@ -49,7 +49,7 @@ final class Card extends \Df\StripeClone\Facade\Card {
 	 * @used-by \Df\StripeClone\CardFormatter::ii()
 	 * @return int
 	 */
-	function expMonth() {return $this->_p['expiry_month'];}
+	function expMonth() {return intval($this->_p['expiry_month']);}
 
 	/**
 	 * 2017-02-17
@@ -61,7 +61,7 @@ final class Card extends \Df\StripeClone\Facade\Card {
 	 * @used-by \Df\StripeClone\CardFormatter::ii()
 	 * @return int
 	 */
-	function expYear() {return 2000 + $this->_p['expiry_year'];}
+	function expYear() {return 2000 + intval($this->_p['expiry_year']);}
 
 	/**
 	 * 2017-02-17
