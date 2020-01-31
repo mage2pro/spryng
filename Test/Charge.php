@@ -1,6 +1,6 @@
 <?php
 // 2017-02-18
-namespace Dfe\Spryng\T;
+namespace Dfe\Spryng\Test;
 use SpryngPaymentsApiPhp\Object\Card as lCard;
 use SpryngPaymentsApiPhp\Object\Transaction as lCharge;
 final class Charge extends CaseT {

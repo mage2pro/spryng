@@ -1,13 +1,13 @@
 <?php
-namespace Dfe\Spryng\T;
+namespace Dfe\Spryng\Test;
 use SpryngPaymentsApiPhp\Client as API;
 /**
  * 2017-02-15
- * @see \Dfe\Spryng\T\Account
- * @see \Dfe\Spryng\T\Card
- * @see \Dfe\Spryng\T\Charge
- * @see \Dfe\Spryng\T\Common
- * @see \Dfe\Spryng\T\Customer
+ * @see \Dfe\Spryng\Test\Account
+ * @see \Dfe\Spryng\Test\Card
+ * @see \Dfe\Spryng\Test\Charge
+ * @see \Dfe\Spryng\Test\Common
+ * @see \Dfe\Spryng\Test\Customer
  * @method \Dfe\Spryng\Settings s()
  */
 abstract class CaseT extends \Df\Core\TestCase {

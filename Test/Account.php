@@ -1,6 +1,6 @@
 <?php
 // 2017-02-18
-namespace Dfe\Spryng\T;
+namespace Dfe\Spryng\Test;
 use SpryngPaymentsApiPhp\Object\Account as lAccount;
 final class Account extends CaseT {
 	/** @test 2017-02-15 */
