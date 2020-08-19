@@ -5,7 +5,7 @@ use Magento\Sales\Model\Order\Payment as OP;
 use SpryngPaymentsApiPhp\Client as API;
 use SpryngPaymentsApiPhp\Controller\TransactionController as API_Transaction;
 use SpryngPaymentsApiPhp\Object\Transaction as C;
-// 2017-02-17
+# 2017-02-17
 /** @method \Dfe\Spryng\Method m() */
 final class Charge extends \Df\StripeClone\Facade\Charge {
 	/**
@@ -33,9 +33,9 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	function create(array $p) {
 		/** @var C $result */
 		$result = $this->apiT()->create($p);
-		// 2017-02-19
-		// Why does a «createTransaction» API method response
-		// not contain the bank card information? https://mage2.pro/t/2812
+		# 2017-02-19
+		# Why does a «createTransaction» API method response
+		# not contain the bank card information? https://mage2.pro/t/2812
 		$result->card = $this->api()->card->getById($result->card->_id);
 		return $result;
 	}

@@ -2,7 +2,7 @@
 namespace Dfe\Spryng\Facade;
 use SpryngPaymentsApiPhp\Client as API;
 use SpryngPaymentsApiPhp\Object\Customer as C;
-// 2017-02-17
+# 2017-02-17
 /** @method \Dfe\Spryng\Method m() */
 final class Customer extends \Df\StripeClone\Facade\Customer {
 

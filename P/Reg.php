@@ -1,7 +1,7 @@
 <?php
 namespace Dfe\Spryng\P;
 use Magento\Sales\Model\Order\Address as A;
-// 2017-06-11
+# 2017-06-11
 final class Reg extends \Df\StripeClone\P\Reg {
 	/**
 	 * 2017-02-18
@@ -18,22 +18,22 @@ final class Reg extends \Df\StripeClone\P\Reg {
 		,'first_name' => $this->customerNameF()
 		,'gender' => $this->customerGender('male', 'female')
 		,'last_name' => $this->customerNameL()
-		// 2017-02-18
-		// [Spryng] The documentation says that the «organisation» is a required parameter
-		// of a «createCustomer» API request, but really the request works without it:
-		// https://mage2.pro/t/2844
+		# 2017-02-18
+		# [Spryng] The documentation says that the «organisation» is a required parameter
+		# of a «createCustomer» API request, but really the request works without it:
+		# https://mage2.pro/t/2844
 		//,'organisation' => 'Mage2.PRO'
-		// 2017-02-18
-		// Нельзя передавать одновременно и имя, и название организации.
+		# 2017-02-18
+		# Нельзя передавать одновременно и имя, и название организации.
 		//,'organisation_name' => 'Mage2.PRO'
 		,'phone_number' => $sa->getTelephone()
 		,'postal_code' => $sa->getPostcode()
-		// 2017-02-18
-		// Передача null в качестве региона приводит к сбою.
+		# 2017-02-18
+		# Передача null в качестве региона приводит к сбою.
 		,'region' => $sa->getRegion() ?: $sa->getCity()
-		// 2017-02-18
-		// https://mage2.pro/t/2566
-		// Этот параметр необязателен.
+		# 2017-02-18
+		# https://mage2.pro/t/2566
+		# Этот параметр необязателен.
 		//,'social_security_number' => $sa->getVatId()
 		,'street_address' => df_cc_s($sa->getStreet())
 		,'title' => $this->customerGender('mr', 'ms')

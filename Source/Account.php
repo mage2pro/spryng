@@ -2,7 +2,7 @@
 namespace Dfe\Spryng\Source;
 use Dfe\Spryng\Settings as S;
 use SpryngPaymentsApiPhp\Object\Account as lAccount;
-// 2017-02-15
+# 2017-02-15
 /** @method S ss() */
 final class Account extends \Df\Payment\Source\API\Key\Testable {
 	/**

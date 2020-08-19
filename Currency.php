@@ -2,7 +2,7 @@
 namespace Dfe\Spryng;
 use Magento\Framework\App\ScopeInterface as IScope;
 use Magento\Store\Model\Store;
-// 2017-10-12
+# 2017-10-12
 /** @method Settings s() */
 final class Currency extends \Df\Payment\Currency {
 	/**

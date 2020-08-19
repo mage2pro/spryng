@@ -1,7 +1,7 @@
 <?php
 namespace Dfe\Spryng\Facade;
 use Spryng_PaymentsApiPhp\Object\Refund as R;
-// 2017-02-17
+# 2017-02-17
 final class Refund extends \Df\StripeClone\Facade\Refund {
 	/**
 	 * 2017-02-17

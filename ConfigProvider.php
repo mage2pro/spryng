@@ -1,6 +1,6 @@
 <?php
 namespace Dfe\Spryng;
-// 2017-03-14
+# 2017-03-14
 /** @method Settings s() */
 final class ConfigProvider extends \Df\StripeClone\ConfigProvider {
 	/**

@@ -1,5 +1,5 @@
 <?php
-// 2017-02-15
+# 2017-02-15
 namespace Dfe\Spryng;
 use Magento\Framework\App\ScopeInterface as S;
 use Magento\Store\Model\Store;

@@ -1,9 +1,9 @@
 <?php
 namespace Dfe\Spryng\Facade;
 use SpryngPaymentsApiPhp\Object\Card as C;
-// 2017-02-17
-// https://api.spryngpayments.com/v1/#operation/getCard
-// A real API response does not contain all the documented fields: https://mage2.pro/t/2819
+# 2017-02-17
+# https://api.spryngpayments.com/v1/#operation/getCard
+# A real API response does not contain all the documented fields: https://mage2.pro/t/2819
 final class Card extends \Df\StripeClone\Facade\Card {
 	/**
 	 * 2017-02-17
