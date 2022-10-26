@@ -9,7 +9,7 @@ final class Account extends \Df\Payment\Source\API\Key\Testable {
 	 * 2017-02-15
 	 * @override
 	 * @see \Df\Config\Source\API\Key::apiKeyName()
-	 * @used-by \Df\Config\Source\API\Key::apiKey()
+	 * @used-by \Df\Config\Source\API\Key::isRequirementMet()
 	 * @return string
 	 */
 	protected function apiKeyName() {return $this->tkey('PrivateKey');}
@@ -30,7 +30,7 @@ final class Account extends \Df\Payment\Source\API\Key\Testable {
 	 * @used-by \Df\Config\Source\API::map()
 	 * @return array(string => string)
 	 */
-	protected function fetch() {return df_map_r(function(lAccount $a) {return [
+	protected function fetch():array {return df_map_r(function(lAccount $a) {return [
 		$a->_id, $a->name
 	];}, $this->ss()->api($this->test())->account->getAll());}
 }
