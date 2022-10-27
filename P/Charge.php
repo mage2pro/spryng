@@ -9,7 +9,7 @@ final class Charge extends \Df\StripeClone\P\Charge {
 	 * 2017-10-09 The key name of a bank card token or of a saved bank card ID.
 	 * @override
 	 * @see \Df\StripeClone\P\Charge::k_CardId()
-	 * @used-by kc_Excluded()
+	 * @used-by self::kc_Excluded()
 	 * @used-by \Df\StripeClone\P\Charge::request()
 	 * @return string
 	 */

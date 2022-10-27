@@ -20,7 +20,7 @@ final class Settings extends \Df\StripeClone\Settings {
 
 	/**
 	 * 2017-02-15
-	 * @used-by account()
+	 * @used-by self::account()
 	 * @used-by \Dfe\Spryng\Method::api()
 	 * @param null|string|int|S|Store $s [optional]
 	 * @return API
