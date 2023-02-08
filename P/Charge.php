@@ -23,7 +23,7 @@ final class Charge extends \Df\StripeClone\P\Charge {
 	 * @used-by \Df\StripeClone\P\Charge::request()
 	 * @return array(string => mixed)
 	 */
-	protected function p() {return [
+	protected function p():array {return [
 		'account' => $this->s()->account()->_id
 		,'customer_ip' => $this->customerIp()
 		# 2017-02-18
