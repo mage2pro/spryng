@@ -24,6 +24,7 @@ abstract class CaseT extends \Df\Core\TestCase {
 	 * 2017-02-15
 	 * @used-by \Dfe\Spryng\Test\Account::t01()
 	 * @used-by \Dfe\Spryng\Test\Card::t01()
+	 * @used-by \Dfe\Spryng\Test\Charge::t01_refund()
 	 */
 	final protected function api():API {return $this->s()->api();}
 }
