@@ -23,7 +23,7 @@ final class Settings extends \Df\StripeClone\Settings {
 	 * @used-by \Dfe\Spryng\Method::api()
 	 * @param null|string|int|S|Store $s [optional]
 	 */
-	function api($s = null):API {return dfc($this, function($s) {return new API(
+	function api($s = null):API {return dfc($this, function($s):API {return new API(
 		$this->privateKey($s), $this->test($s)
 	);}, [$s]);}
 }
