@@ -15,6 +15,7 @@ abstract class CaseT extends \Df\Core\TestCase {
 	 * 2017-02-15
 	 * @used-by \Dfe\Spryng\Test\Charge::t01_refund()
 	 * @used-by \Dfe\Spryng\Test\Charge::t02_auth_and_capture()
+	 * @used-by \Dfe\Spryng\Test\Charge::t03_auth_and_capture_partial()
 	 */
 	final protected function acccountId():string {return $this->s()->account()->_id;}
 
