@@ -7,7 +7,7 @@ final class Customer extends CaseT {
 	function t00():void {}
 
 	/** 2017-02-18 */
-	function t01() {
+	function t01():void {
 		/** @var lCustomer $customer */
 		$customer = $this->api()->customer->create([
 			'city' => 'Stockholm'
