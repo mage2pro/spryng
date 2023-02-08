@@ -13,9 +13,8 @@ use SpryngPaymentsApiPhp\Client as API;
 abstract class CaseT extends \Df\Core\TestCase {
 	/**
 	 * 2017-02-15
-	 * @return string
 	 */
-	final protected function acccountId() {return $this->s()->account()->_id;}
+	final protected function acccountId():string {return $this->s()->account()->_id;}
 
 	/**
 	 * 2017-02-15
