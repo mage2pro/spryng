@@ -74,7 +74,7 @@ final class Charge extends CaseT {
 	 * https://api.spryngpayments.com/v1/#operation/captureTransaction
 	 * [Spryng] An example of the «captureTransaction» API method response: https://mage2.pro/t/2850
 	 */
-	function t03_auth_and_capture_partial() {
+	function t03_auth_and_capture_partial():void {
 		$a = 10000;
 		/** @var lCard $card */
 		$card = $this->api()->card->create([
