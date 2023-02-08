@@ -9,9 +9,8 @@ final class Method extends \Df\StripeClone\Method {
 	 * 2017-02-17
 	 * @used-by \Dfe\Spryng\Facade\Charge::api()
 	 * @used-by \Dfe\Spryng\Facade\Customer::api()
-	 * @return API
 	 */
-	function api() {return $this->s()->api();}
+	function api():API {return $this->s()->api();}
 
 	/**
 	 * 2017-02-19
