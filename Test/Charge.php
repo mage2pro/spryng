@@ -43,7 +43,7 @@ final class Charge extends CaseT {
 	 * [Spryng] An example of the «captureTransaction» API method response
 	 * https://mage2.pro/t/2850
 	 */
-	function t02_auth_and_capture() {
+	function t02_auth_and_capture():void {
 		/** @var lCard $card */
 		$card = $this->api()->card->create([
 			'card_number' => '4024007108173153'
