@@ -5,10 +5,10 @@ use SpryngPaymentsApiPhp\Object\Card as lCard;
 use SpryngPaymentsApiPhp\Object\Transaction as lCharge;
 final class Charge extends CaseT {
 	/** 2017-02-15 @test */
-	function t00() {}
+	function t00():void {}
 
 	/** 2017-02-15 */
-	function t01_refund() {
+	function t01_refund():void {
 		/** @var lCard $card */
 		$card = $this->api()->card->create([
 			'card_number' => '4024007108173153'
