@@ -11,7 +11,6 @@ final class Currency extends \Df\Payment\Currency {
 	 * @see \Df\Payment\Currency::_iso3()
 	 * @used-by \Df\Payment\Currency::iso3()
 	 * @param null|string|int|IScope|Store $s [optional]
-	 * @return string
 	 */
-	protected function _iso3($s = null) {return $this->s()->account($s)->currency_code;}
+	protected function _iso3($s = null):string {return $this->s()->account($s)->currency_code;}
 }
