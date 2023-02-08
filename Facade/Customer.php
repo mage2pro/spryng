@@ -57,6 +57,7 @@ final class Customer extends \Df\StripeClone\Facade\Customer {
 
 	/**
 	 * 2017-02-17
+	 * @used-by self::_get()
 	 */
 	private function api():API {return $this->m()->api();}
 }
