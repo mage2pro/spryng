@@ -10,18 +10,16 @@ final class Account extends \Df\Payment\Source\API\Key\Testable {
 	 * @override
 	 * @see \Df\Config\Source\API\Key::apiKeyName()
 	 * @used-by \Df\Config\Source\API\Key::isRequirementMet()
-	 * @return string
 	 */
-	protected function apiKeyName() {return $this->tkey('PrivateKey');}
+	protected function apiKeyName():string {return $this->tkey('PrivateKey');}
 
 	/**
 	 * 2017-02-15
 	 * @override
 	 * @see \Df\Config\Source\API\Key::apiKeyTitle()
 	 * @used-by \Df\Config\Source\API\Key::requirement()
-	 * @return string
 	 */
-	protected function apiKeyTitle() {return 'an API Key';}
+	protected function apiKeyTitle():string {return 'an API Key';}
 
 	/**
 	 * 2017-02-15

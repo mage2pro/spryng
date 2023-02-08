@@ -13,7 +13,6 @@ final class Refund extends \Df\StripeClone\Facade\Refund {
 	 * @see \Df\StripeClone\Facade\Refund::transId()
 	 * @used-by \Df\StripeClone\Method::_refund()
 	 * @param R $r
-	 * @return string
 	 */
-	function transId($r) {return null;}
+	function transId($r):string {return '';}
 }

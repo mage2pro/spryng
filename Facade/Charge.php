@@ -1,7 +1,5 @@
 <?php
 namespace Dfe\Spryng\Facade;
-use Magento\Sales\Model\Order\Creditmemo as CM;
-use Magento\Sales\Model\Order\Payment as OP;
 use SpryngPaymentsApiPhp\Client as API;
 use SpryngPaymentsApiPhp\Controller\TransactionController as API_Transaction;
 use SpryngPaymentsApiPhp\Object\Transaction as C;
@@ -18,9 +16,8 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	 * @param string $id
 	 * @param int|float $a
 	 * The $a value is already converted to the PSP currency and formatted according to the PSP requirements.
-	 * @return C
 	 */
-	function capturePreauthorized($id, $a) {return $this->apiT()->capture($id, $a);}
+	function capturePreauthorized($id, $a):C {return $this->apiT()->capture($id, $a);}
 
 	/**
 	 * 2017-02-17
@@ -28,16 +25,13 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	 * @see \Df\StripeClone\Facade\Charge::create()
 	 * @used-by \Df\StripeClone\Method::chargeNew()
 	 * @param array(string => mixed) $p
-	 * @return C
 	 */
-	function create(array $p) {
-		/** @var C $result */
-		$result = $this->apiT()->create($p);
+	function create(array $p):C {
+		$r = $this->apiT()->create($p); /** @var C $r */
 		# 2017-02-19
-		# Why does a «createTransaction» API method response
-		# not contain the bank card information? https://mage2.pro/t/2812
-		$result->card = $this->api()->card->getById($result->card->_id);
-		return $result;
+		# Why does a «createTransaction» API method response not contain the bank card information? https://mage2.pro/t/2812
+		$r->card = $this->api()->card->getById($r->card->_id);
+		return $r;
 	}
 
 	/**
@@ -46,9 +40,8 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	 * @see \Df\StripeClone\Facade\Charge::id()
 	 * @used-by \Df\StripeClone\Method::chargeNew()
 	 * @param C $c
-	 * @return string
 	 */
-	function id($c) {return $c->_id;}
+	function id($c):string {return $c->_id;}
 
 	/**
 	 * 2017-02-17
@@ -60,21 +53,19 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	 * @see \Df\StripeClone\Facade\Charge::pathToCard()
 	 * @used-by \Df\StripeClone\Block\Info::cardDataFromChargeResponse()
 	 * @used-by \Df\StripeClone\Facade\Charge::cardData()
-	 * @return string
 	 */
-	function pathToCard() {return 'card';}
+	function pathToCard():string {return 'card';}
 
 	/**
 	 * 2017-02-17
+	 * 2022-12-19 The $a value is already converted to the PSP currency and formatted according to the PSP requirements.
 	 * @override
 	 * @see \Df\StripeClone\Facade\Charge::refund()
 	 * @used-by self::void()
 	 * @used-by \Df\StripeClone\Method::_refund()
-	 * @param string $id
-	 * @param float $a В формате и валюте платёжной системы. Значение готово для применения в запросе API.
-	 * @return object
+	 * @return null
 	 */
-	function refund($id, $a) {return null;}
+	function refund(string $id, int $a) {return null;}
 
 	/**
 	 * 2017-02-19
@@ -83,10 +74,8 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	 * @override
 	 * @see \Df\StripeClone\Facade\Charge::void()
 	 * @used-by \Df\StripeClone\Method::_refund()
-	 * @param string $id
-	 * @return object
 	 */
-	function void($id) {return $this->apiT()->void($id);}
+	function void(string $id):C {return $this->apiT()->void($id);}
 
 	/**
 	 * 2017-02-18
@@ -96,9 +85,8 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 	 * @override
 	 * @see \Df\StripeClone\Facade\Charge::cardIdPrefix()
 	 * @used-by \Df\StripeClone\Payer::tokenIsNew()
-	 * @return string
 	 */
-	protected function cardIdPrefix() {return null;}
+	protected function cardIdPrefix():string {return '';}
 
 	/**
 	 * 2017-02-17

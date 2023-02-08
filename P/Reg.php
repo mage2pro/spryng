@@ -44,18 +44,16 @@ final class Reg extends \Df\StripeClone\P\Reg {
 	 * @override
 	 * @see \Df\StripeClone\P\Reg::k_CardId()
 	 * @used-by \Df\StripeClone\P\Reg::request()
-	 * @return string
 	 */
-	protected function k_CardId() {return null;}
+	protected function k_CardId():string {return '';}
 
 	/**
 	 * 2017-02-18
 	 * @override
 	 * @see \Df\StripeClone\P\Reg::k_Email()
 	 * @used-by \Df\StripeClone\P\Reg::request()
-	 * @return string
 	 */
-	protected function k_Email() {return 'email_address';}
+	protected function k_Email():string {return 'email_address';}
 
 	/**
 	 * 2017-02-18
@@ -64,5 +62,5 @@ final class Reg extends \Df\StripeClone\P\Reg {
 	 * @used-by \Df\StripeClone\P\Reg::request()
 	 * @return string[]
 	 */
-	protected function k_Excluded() {return [parent::K_DESCRIPTION];}
+	protected function k_Excluded():array {return [parent::K_DESCRIPTION];}
 }

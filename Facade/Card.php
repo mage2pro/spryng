@@ -20,9 +20,8 @@ final class Card extends \Df\StripeClone\Facade\Card {
 	 * @see \Df\StripeClone\Facade\Card::brand()
 	 * @used-by \Df\StripeClone\CardFormatter::ii()
 	 * @used-by \Df\StripeClone\CardFormatter::label()
-	 * @return string
 	 */
-	function brand() {return $this->_p['brand'];}
+	function brand():string {return $this->_p['brand'];}
 
 	/**
 	 * 2017-02-17
@@ -35,9 +34,8 @@ final class Card extends \Df\StripeClone\Facade\Card {
 	 * @override
 	 * @see \Df\StripeClone\Facade\Card::country()
 	 * @used-by \Df\StripeClone\CardFormatter::country()
-	 * @return null
 	 */
-	function country() {return $this->_p['issuer_country'];}
+	function country():string {return $this->_p['issuer_country'];}
 
 	/**
 	 * 2017-02-17
@@ -48,9 +46,8 @@ final class Card extends \Df\StripeClone\Facade\Card {
 	 * @used-by \Df\StripeClone\CardFormatter::exp()
 	 * @used-by \Df\StripeClone\CardFormatter::ii()
 	 * @used-by \Df\StripeClone\Facade\Card::isActive()
-	 * @return int
 	 */
-	function expMonth() {return intval($this->_p['expiry_month']);}
+	function expMonth():int {return intval($this->_p['expiry_month']);}
 
 	/**
 	 * 2017-02-17
@@ -61,9 +58,8 @@ final class Card extends \Df\StripeClone\Facade\Card {
 	 * @used-by \Df\StripeClone\CardFormatter::exp()
 	 * @used-by \Df\StripeClone\CardFormatter::ii()
 	 * @used-by \Df\StripeClone\Facade\Card::isActive()
-	 * @return int
 	 */
-	function expYear() {return 2000 + intval($this->_p['expiry_year']);}
+	function expYear():int {return 2000 + intval($this->_p['expiry_year']);}
 
 	/**
 	 * 2017-02-17
@@ -72,9 +68,8 @@ final class Card extends \Df\StripeClone\Facade\Card {
 	 * @see \Df\StripeClone\Facade\Card::id()
 	 * @used-by \Df\StripeClone\ConfigProvider::cards()
 	 * @used-by \Df\StripeClone\Facade\Customer::cardIdForJustCreated()
-	 * @return string
 	 */
-	function id() {return $this->_p['_id'];}
+	function id():string {return $this->_p['_id'];}
 
 	/**
 	 * 2017-02-17
@@ -84,9 +79,8 @@ final class Card extends \Df\StripeClone\Facade\Card {
 	 * @see \Df\StripeClone\Facade\Card::last4()
 	 * @used-by \Df\StripeClone\CardFormatter::ii()
 	 * @used-by \Df\StripeClone\CardFormatter::label()
-	 * @return string
 	 */
-	function last4() {return $this->_p['last_four'];}
+	function last4():string {return $this->_p['last_four'];}
 
 	/**
 	 * 2017-02-17 [Spryng] Is any possibility to collect the cardholder's name? https://mage2.pro/t/2802
@@ -95,9 +89,8 @@ final class Card extends \Df\StripeClone\Facade\Card {
 	 * @override
 	 * @see \Df\StripeClone\Facade\Card::owner()
 	 * @used-by \Df\StripeClone\CardFormatter::ii()
-	 * @return string
 	 */
-	function owner() {return $this->_p['card_holder_name'];}
+	function owner():string {return $this->_p['card_holder_name'];}
 
 	/**
 	 * 2017-02-17

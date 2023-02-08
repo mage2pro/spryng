@@ -11,9 +11,9 @@ final class Charge extends \Df\StripeClone\P\Charge {
 	 * @see \Df\StripeClone\P\Charge::k_CardId()
 	 * @used-by self::kc_Excluded()
 	 * @used-by \Df\StripeClone\P\Charge::request()
-	 * @return string
+	 * @used-by \Df\StripeClone\P\Reg::k_CardId()
 	 */
-	function k_CardId() {return 'card';}
+	function k_CardId():string {return 'card';}
 
 	/**
 	 * 2017-02-18
@@ -42,19 +42,16 @@ final class Charge extends \Df\StripeClone\P\Charge {
 	 * @override
 	 * @see \Df\StripeClone\P\Charge::k_Capture()
 	 * @used-by \Df\StripeClone\P\Charge::request()
-	 * @return string
 	 */
-	protected function k_Capture() {return 'capture_now';}
+	protected function k_Capture():string {return 'capture_now';}
 
 	/**
-	 * 2017-02-18
-	 * https://api.spryngpayments.com/v1/#operation/createTransaction
+	 * 2017-02-18 https://api.spryngpayments.com/v1/#operation/createTransaction
 	 * @override
 	 * @see \Df\StripeClone\P\Charge::k_DSD()
 	 * @used-by \Df\StripeClone\P\Charge::request()
-	 * @return string
 	 */
-	protected function k_DSD() {return 'dynamic_descriptor';}
+	protected function k_DSD():string {return 'dynamic_descriptor';}
 
 	/**
 	 * 2017-02-18
@@ -63,5 +60,5 @@ final class Charge extends \Df\StripeClone\P\Charge {
 	 * @used-by \Df\StripeClone\P\Charge::request()
 	 * @return string[]
 	 */
-	protected function k_Excluded() {return [parent::K_CURRENCY, parent::K_DESCRIPTION];}
+	protected function k_Excluded():array {return [parent::K_CURRENCY, parent::K_DESCRIPTION];}
 }
