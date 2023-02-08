@@ -22,7 +22,6 @@ abstract class CaseT extends \Df\Core\TestCase {
 
 	/**
 	 * 2017-02-15
-	 * @return API
 	 */
-	final protected function api() {return $this->s()->api();}
+	final protected function api():API {return $this->s()->api();}
 }
