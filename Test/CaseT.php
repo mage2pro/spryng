@@ -28,6 +28,7 @@ abstract class CaseT extends \Df\Core\TestCase {
 	 * @used-by \Dfe\Spryng\Test\Charge::t02_auth_and_capture()
 	 * @used-by \Dfe\Spryng\Test\Charge::t03_auth_and_capture_partial()
 	 * @used-by \Dfe\Spryng\Test\Charge::t04_auth_and_void()
+	 * @used-by \Dfe\Spryng\Test\Customer::t01()
 	 */
 	final protected function api():API {return $this->s()->api();}
 }
