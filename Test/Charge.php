@@ -106,7 +106,7 @@ final class Charge extends CaseT {
 	 * https://api.spryngpayments.com/v1/#operation/voidAuthTransaction
 	 * [Spryng] An example of the «voidAuthTransaction» API method response: https://mage2.pro/t/2851
 	 */
-	function t04_auth_and_void() {
+	function t04_auth_and_void():void {
 		/** @var lCard $card */
 		$card = $this->api()->card->create([
 			'card_number' => '4024007108173153'
