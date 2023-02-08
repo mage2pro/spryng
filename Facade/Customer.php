@@ -22,9 +22,8 @@ final class Customer extends \Df\StripeClone\Facade\Customer {
 	 * @see \Df\StripeClone\Facade\Customer::create()
 	 * @used-by \Df\StripeClone\Payer::newCard()
 	 * @param array(string => mixed) $p
-	 * @return C
 	 */
-	function create(array $p) {return $this->api()->customer->create($p);}
+	function create(array $p):C {return $this->api()->customer->create($p);}
 
 	/**
 	 * 2017-02-17
