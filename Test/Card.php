@@ -4,10 +4,10 @@ namespace Dfe\Spryng\Test;
 use SpryngPaymentsApiPhp\Object\Card as lCard;
 final class Card extends CaseT {
 	/** 2017-02-15 @test */
-	function t00() {}
+	function t00():void {}
 
 	/** 2017-02-15 */
-	function t01() {
+	function t01():void {
 		/** @var lCard $card */
 		$card = $this->api()->card->create([
 			'card_number' => '4024007108173153'
