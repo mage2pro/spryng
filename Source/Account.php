@@ -28,7 +28,7 @@ final class Account extends \Df\Payment\Source\API\Key\Testable {
 	 * @used-by \Df\Config\Source\API::map()
 	 * @return array(string => string)
 	 */
-	protected function fetch():array {return df_map_r(function(lAccount $a) {return [
+	protected function fetch():array {return df_map_r(function(lAccount $a):array {return [
 		$a->_id, $a->name
 	];}, $this->ss()->api($this->test())->account->getAll());}
 }
