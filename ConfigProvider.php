@@ -10,7 +10,5 @@ final class ConfigProvider extends \Df\StripeClone\ConfigProvider {
 	 * @used-by \Df\Payment\ConfigProvider::getConfig()
 	 * @return array(string => mixed)
 	 */
-	protected function config():array {return [
-		'organisation' => $this->s()->account()->organisation
-	] + parent::config();}
+	protected function config():array {return ['organisation' => $this->s()->account()->organisation] + parent::config();}
 }
