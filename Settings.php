@@ -12,7 +12,6 @@ final class Settings extends \Df\StripeClone\Settings {
 	 * @used-by \Dfe\Spryng\Currency::_iso3()
 	 * @used-by \Dfe\Spryng\P\Charge::p()
 	 * @param null|string|int|S|Store $s [optional]
-	 * @return lAccount
 	 */
 	function account($s = null):lAccount {return dfc($this, function($s) {return
 		$this->api($s)->account->getById($this->testable('account', $s))
