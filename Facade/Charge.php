@@ -89,9 +89,8 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 
 	/**
 	 * 2017-02-17
-	 * @return API
 	 */
-	private function api() {return $this->m()->api();}
+	private function api():API {return $this->m()->api();}
 
 	/**
 	 * 2017-02-17
