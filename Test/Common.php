@@ -6,7 +6,7 @@ final class Common extends CaseT {
 	function t00():void {}
 
 	/** 2017-02-15 */
-	function t01() {
+	function t01():void {
 		print_r($this->s()->publicKey() . "\n");
 		print_r($this->s()->privateKey() . "\n");
 	}
