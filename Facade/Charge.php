@@ -96,6 +96,8 @@ final class Charge extends \Df\StripeClone\Facade\Charge {
 
 	/**
 	 * 2017-02-17
+	 * @used-by self::capturePreauthorized()
+	 * @used-by self::create()
 	 */
 	private function apiT():API_Transaction {return $this->api()->transaction;}
 }
