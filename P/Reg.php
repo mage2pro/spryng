@@ -22,10 +22,10 @@ final class Reg extends \Df\StripeClone\P\Reg {
 		# [Spryng] The documentation says that the «organisation» is a required parameter
 		# of a «createCustomer» API request, but really the request works without it:
 		# https://mage2.pro/t/2844
-		//,'organisation' => 'Mage2.PRO'
+		#,'organisation' => 'Mage2.PRO'
 		# 2017-02-18
 		# Нельзя передавать одновременно и имя, и название организации.
-		//,'organisation_name' => 'Mage2.PRO'
+		#,'organisation_name' => 'Mage2.PRO'
 		,'phone_number' => $sa->getTelephone()
 		,'postal_code' => $sa->getPostcode()
 		# 2017-02-18
@@ -34,7 +34,7 @@ final class Reg extends \Df\StripeClone\P\Reg {
 		# 2017-02-18
 		# https://mage2.pro/t/2566
 		# Этот параметр необязателен.
-		//,'social_security_number' => $sa->getVatId()
+		#,'social_security_number' => $sa->getVatId()
 		,'street_address' => df_cc_s($sa->getStreet())
 		,'title' => $this->customerGender('mr', 'ms')
 	];}
